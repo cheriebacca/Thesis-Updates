@@ -317,7 +317,7 @@ ggplot(data = df_summary_IUH_208, aes(x = internet_freq, y = n, fill = internet_
 
 ```
 
-The vast majority of participants (202 respondents) report daily internet usage, with 133 of them spending more than 5 hours online each day, representing nearly 64% of the total sample. Another 46 respondents use the internet daily for 3-5 hours, while 21 spend 1-3 hours daily and only 2 use it for less than 1 hour per day. In stark contrast, just 3 respondents report using the internet rarely (all for 3-5 hours when they do), and only 1 person indicates weekly internet use (for more than 5 hours). 
+The vast majority of participants (202 respondents) report daily internet usage, with 133 of them spending more than 5 hours online each day, representing nearly 64% of the total sample. Another 46 respondents use the internet daily for 3-5 hours, while 21 spend 1-3 hours daily and only 2 use it for less than 1 hour per day. In stark contrast, just 3 respondents report using the internet rarely (all for 3-5 hours when they do), and only 1 person indicates weekly internet use (for more than 5 hours).
 
 These findings overwhelmingly demonstrate that **daily, extensive internet usage is the norm among this population**, with over 85% of respondents spending at least 3 hours online every day.
 
@@ -349,10 +349,9 @@ ggplot(df_summary_DC_208, aes(x = digital_comf, y = n, fill = online_trans)) +
 
 ```
 
-The overwhelming majority of participants (204 individuals, or 98% of respondents) report having digital competency, with most of these digitally competent individuals (190 respondents, or 93% of the total sample) also engaging in online transactions. Only 14 digitally competent respondents (7%) report not conducting online transactions despite their digital skills. Among the small minority who lack digital competency (just 4 respondents, or 2% of the sample), 3 individuals still don't participate in online transactions, while surprisingly, 1 respondent reports conducting online transactions despite lacking digital competency. 
+The overwhelming majority of participants (204 individuals, or 98% of respondents) report having digital competency, with most of these digitally competent individuals (190 respondents, or 93% of the total sample) also engaging in online transactions. Only 14 digitally competent respondents (7%) report not conducting online transactions despite their digital skills. Among the small minority who lack digital competency (just 4 respondents, or 2% of the sample), 3 individuals still don't participate in online transactions, while surprisingly, 1 respondent reports conducting online transactions despite lacking digital competency.
 
 This data demonstrates an **extremely strong correlation between digital competency and online transaction behavior**, suggesting that digital literacy is nearly universal among the respondents and serves as a key enabler for online commercial activity.
-
 
 ### Familiarity with Smart Tools
 
@@ -379,7 +378,7 @@ df_208 %>%
 
 ```
 
-Smartphones dominate as the most familiar device with 206 respondents (99% of the sample) indicating familiarity with them. Laptops follow as the second most familiar smart tool, with 129 respondents (62%) reporting familiarity. Tablets rank third with 45 respondents (22%) being familiar with them, while smartwatches show the lowest familiarity rate at only 19 respondents (9%). The data reveals a clear hierarchy in smart device familiarity, with nearly universal smartphone adoption but significantly lower familiarity with wearable technology like smartwatches. 
+Smartphones dominate as the most familiar device with 206 respondents (99% of the sample) indicating familiarity with them. Laptops follow as the second most familiar smart tool, with 129 respondents (62%) reporting familiarity. Tablets rank third with 45 respondents (22%) being familiar with them, while smartwatches show the lowest familiarity rate at only 19 respondents (9%). The data reveals a clear hierarchy in smart device familiarity, with nearly universal smartphone adoption but significantly lower familiarity with wearable technology like smartwatches.
 
 This pattern suggests that while **mobile communication technology has reached near-complete penetration** among the respondents, newer categories of smart devices have not yet achieved the same level of familiarity or adoption.
 
@@ -412,7 +411,7 @@ ggplot(df_summary_208, aes(x = reorder(crypto_aware, -n), y = n, fill = crypto_a
 
 ```
 
-The largest group, comprising 130 respondents (62.5% of the sample), indicates basic awareness of cryptocurrencies but limited knowledge ("Yes, but I don't know much about them"). Meanwhile, 62 respondents (29.8%) report being familiar with cryptocurrencies ("Yes, I am familiar with cryptocurrencies"), suggesting a deeper understanding of the topic. Only 16 respondents (7.7%) indicate complete unfamiliarity with cryptocurrencies ("No, I have never heard of cryptocurrencies"). 
+The largest group, comprising 130 respondents (62.5% of the sample), indicates basic awareness of cryptocurrencies but limited knowledge ("Yes, but I don't know much about them"). Meanwhile, 62 respondents (29.8%) report being familiar with cryptocurrencies ("Yes, I am familiar with cryptocurrencies"), suggesting a deeper understanding of the topic. Only 16 respondents (7.7%) indicate complete unfamiliarity with cryptocurrencies ("No, I have never heard of cryptocurrencies").
 
 These findings demonstrate that while cryptocurrency awareness is widespread among the survey population (92.3% have at least heard of cryptocurrencies), a significant knowledge gap exists, with less than a third of respondents claiming actual familiarity with the technology. This pattern suggests that while **most respondents recognize cryptocurrencies as a concept**, there remains substantial opportunity for education about their functionality and applications.
 
@@ -453,7 +452,7 @@ ggplot(df_long_208, aes(x = reorder(crypto_own2, -n), y = n, fill = n)) +
 
 ```
 
-Bitcoin (BTC) emerges as the most popular cryptocurrency with 13 owners, followed by Ethereum (ETH) with 10 owners and XRP/Ripple with 7 owners. Tether (USDT) has 4 owners, while Binance Coin (BNB), Dogecoin (DOGE), and Solana (SOL) each have 3 owners. Less common cryptocurrencies are each owned by just 1 respondent. 
+Bitcoin (BTC) emerges as the most popular cryptocurrency with 13 owners, followed by Ethereum (ETH) with 10 owners and XRP/Ripple with 7 owners. Tether (USDT) has 4 owners, while Binance Coin (BNB), Dogecoin (DOGE), and Solana (SOL) each have 3 owners. Less common cryptocurrencies are each owned by just 1 respondent.
 
 This ownership pattern reflects the broader cryptocurrency market capitalization hierarchy, with the most established coins like Bitcoin and Ethereum having the highest adoption rates, followed by altcoins of decreasing market prominence. Overall, the data indicates that while **cryptocurrency ownership exists among respondents**, it represents a **relatively small subset of the current total 208 survey participants**, with Bitcoin ownership representing just 6.25% of the total sample.
 
@@ -490,7 +489,7 @@ ggplot(df_summary_208, aes(x = reorder(crypto_what, -n), y = n, fill = crypto_wh
 
 ```
 
-Investment and trading activities overwhelmingly dominate as the primary use case, with 19 respondents (approximately 73% of cryptocurrency users) employing cryptocurrencies for this purpose. Gaming and metaverse applications represent the second most common usage, reported by 5 respondents (19% of users). Long-term holding and payments/purchases are each utilized by just 1 respondent, representing only about 4% of cryptocurrency users for each category. 
+Investment and trading activities overwhelmingly dominate as the primary use case, with 19 respondents (approximately 73% of cryptocurrency users) employing cryptocurrencies for this purpose. Gaming and metaverse applications represent the second most common usage, reported by 5 respondents (19% of users). Long-term holding and payments/purchases are each utilized by just 1 respondent, representing only about 4% of cryptocurrency users for each category.
 
 This distribution strongly suggests that **investment and trading** remain the **predominant motivation for cryptocurrency ownership** among the survey participants, with utility-based applications like gaming and payments being significantly less common. When considered alongside the previous cryptocurrency ownership data, these findings indicate that roughly 13% of the total 208 survey respondents own cryptocurrencies, with investment and trading being the primary motivation for approximately 9% of the entire sample.
 
@@ -550,11 +549,11 @@ ggplot(df_long_OPT_208, aes(x = Question, y = Count, fill = Response)) +
 
 ```
 
-This stacked bar chart depicts respondents' levels of optimism regarding various aspects of cryptocurrency technology. 
+This stacked bar chart depicts respondents' levels of optimism regarding various aspects of cryptocurrency technology.
 
-For each statement measuring optimism toward cryptocurrency benefits, the majority of respondents selected the middle option (3 on the scale), indicating a predominantly neutral stance. 
+For each statement measuring optimism toward cryptocurrency benefits, the majority of respondents selected the middle option (3 on the scale), indicating a predominantly neutral stance.
 
-The statement with the highest level of agreement is "Using cryptocurrency gives me more control over my financial activities," with 120 respondents (58%) choosing the neutral option and 51 respondents (24%) expressing some level of agreement. Similarly, statements about cryptocurrency delivering expectations and utilizing the latest financial technologies received moderately positive responses. The aspect with the most skepticism appears to be regarding cryptocurrency offering freedom and flexibility in financial activities, with 70 respondents (34%) expressing some level of disagreement. 
+The statement with the highest level of agreement is "Using cryptocurrency gives me more control over my financial activities," with 120 respondents (58%) choosing the neutral option and 51 respondents (24%) expressing some level of agreement. Similarly, statements about cryptocurrency delivering expectations and utilizing the latest financial technologies received moderately positive responses. The aspect with the most skepticism appears to be regarding cryptocurrency offering freedom and flexibility in financial activities, with 70 respondents (34%) expressing some level of disagreement.
 
 Overall, the visualization reveals a **cautious optimism** among the survey participants, with most maintaining a neutral position while slightly more respondents lean toward agreement than disagreement across all cryptocurrency benefit statements. This suggests that while **respondents recognize potential advantages of cryptocurrency technology**, **widespread strong enthusiasm remains limited**.
 
@@ -611,9 +610,9 @@ ggplot(df_long_INN_208, aes(x = Question, y = Count, fill = Response)) +
 
 ```
 
-The stacked bar chart illustrates respondents' self-assessments of their innovativeness regarding cryptocurrency adoption and understanding. 
+The stacked bar chart illustrates respondents' self-assessments of their innovativeness regarding cryptocurrency adoption and understanding.
 
-The statement "I believe that I enjoy the challenge of figuring out developments of cryptocurrency" received the highest level of agreement, with 59 respondents (28%) selecting agreement options (4 or 5). Conversely, the statements with the strongest disagreement were "I believe I can already provide information to potential adopters of cryptocurrency" and "I believe that I can usually figure out new cryptocurrencies without help from others," with 127 respondents (61%) and 118 respondents (57%) respectively expressing some level of disagreement (1 or 2). The neutral option (3) remains the most common response across all statements, particularly for "I believe that I encounter fewer problems in using cryptocurrency compared to others" (80 respondents, 38%). 
+The statement "I believe that I enjoy the challenge of figuring out developments of cryptocurrency" received the highest level of agreement, with 59 respondents (28%) selecting agreement options (4 or 5). Conversely, the statements with the strongest disagreement were "I believe I can already provide information to potential adopters of cryptocurrency" and "I believe that I can usually figure out new cryptocurrencies without help from others," with 127 respondents (61%) and 118 respondents (57%) respectively expressing some level of disagreement (1 or 2). The neutral option (3) remains the most common response across all statements, particularly for "I believe that I encounter fewer problems in using cryptocurrency compared to others" (80 respondents, 38%).
 
 Overall, this visualization demonstrates that while **respondents show some interest in cryptocurrency developments**, **most do not consider themselves early adopters, innovators, or knowledgeable resources** in the cryptocurrency space, suggesting a perception gap between interest in the technology and personal capability or experience with it.
 
@@ -670,9 +669,9 @@ ggplot(df_long_INS_208, aes(x = Question, y = Count, fill = Response)) +
 
 ```
 
-The stacked bar chart presents respondents' feelings of insecurity regarding various aspects of cryptocurrency use. 
+The stacked bar chart presents respondents' feelings of insecurity regarding various aspects of cryptocurrency use.
 
-The statement generating the strongest agreement is "I believe that sometimes, cryptocurrency is not designed for use by ordinary people," with 109 respondents (52%) expressing some level of agreement (4 or 5). This suggests a significant perception that cryptocurrency technology remains inaccessible to average users. Similarly, concerns about surveillance received substantial agreement, with 59 respondents (28%) agreeing that cryptocurrency makes it too easy for governments and companies to spy on people. The neutral option (3) remains predominant across most statements, particularly for "I believe that cryptocurrency always seems to fail at the worst possible time" (97 respondents, 47%). Regarding wallet preferences, 83 respondents (40%) agree they would prefer a single mobile wallet rather than managing multiple wallets. The technical language barrier of cryptocurrency also emerges as a concern, with 40 respondents (19%) agreeing that cryptocurrency is not helpful due to overly technical language. 
+The statement generating the strongest agreement is "I believe that sometimes, cryptocurrency is not designed for use by ordinary people," with 109 respondents (52%) expressing some level of agreement (4 or 5). This suggests a significant perception that cryptocurrency technology remains inaccessible to average users. Similarly, concerns about surveillance received substantial agreement, with 59 respondents (28%) agreeing that cryptocurrency makes it too easy for governments and companies to spy on people. The neutral option (3) remains predominant across most statements, particularly for "I believe that cryptocurrency always seems to fail at the worst possible time" (97 respondents, 47%). Regarding wallet preferences, 83 respondents (40%) agree they would prefer a single mobile wallet rather than managing multiple wallets. The technical language barrier of cryptocurrency also emerges as a concern, with 40 respondents (19%) agreeing that cryptocurrency is not helpful due to overly technical language.
 
 Overall, this visualization reveals **significant insecurity** about cryptocurrency's user-friendliness, reliability, and potential surveillance issues, highlighting key barriers to wider adoption despite the interest shown in previous charts.
 
@@ -729,7 +728,7 @@ ggplot(df_long_DIS_208, aes(x = Question, y = Count, fill = Response)) +
 
 ```
 
-The stacked bar chart illustrates respondents' discomfort with various aspects of cryptocurrency usage. 
+The stacked bar chart illustrates respondents' discomfort with various aspects of cryptocurrency usage.
 
 The statement generating the strongest agreement is "I believe that when I need assistance with cryptocurrency, I prefer to interact with a person rather than an automated system," with 57 respondents strongly agreeing and another 57 agreeing (levels 4-5), indicating a clear preference for human support over automated solutions. Similarly, high levels of concern are shown regarding transaction verification, with 60 respondents strongly agreeing and 69 agreeing that they need to carefully check that systems aren't making mistakes. Significant discomfort is also expressed about information privacy, with 39 respondents strongly agreeing they can never be sure shared information reaches the right place.
 
@@ -790,7 +789,7 @@ ggplot(df_long_PUN_208, aes(x = Question, y = Count, fill = Response)) +
 
 ```
 
-The stacked bar chart displays respondents' perceptions of cryptocurrency's usefulness across various financial applications. 
+The stacked bar chart displays respondents' perceptions of cryptocurrency's usefulness across various financial applications.
 
 The most prominent pattern is the prevalence of neutral responses (3) across all statements, with approximately 90-110 respondents selecting this middle option for each item, suggesting widespread uncertainty or ambivalence about cryptocurrency's practical benefits. The statement generating the strongest positive sentiment is "I believe that using cryptocurrency enables me to carry out financial transactions more quickly," with 13 respondents strongly agreeing and 55 agreeing (levels 4-5), indicating speed is perceived as cryptocurrency's most valuable attribute.
 
@@ -851,7 +850,7 @@ ggplot(df_long_PEU_208, aes(x = Question, y = Count, fill = Response)) +
 
 ```
 
-The stacked bar chart illustrates respondents' perceptions regarding the ease of use of cryptocurrency across various dimensions. 
+The stacked bar chart illustrates respondents' perceptions regarding the ease of use of cryptocurrency across various dimensions.
 
 The data shows a strong predominance of neutral responses (3) across all statements, with approximately 85-98 respondents selecting this middle option for each item, suggesting widespread uncertainty about cryptocurrency's user-friendliness. The statement generating the most disagreement is "I believe that learning to operate cryptocurrency apps has been very easy for me," with 33 respondents strongly disagreeing and 48 disagreeing (levels 1-2), indicating significant challenges in the learning curve for cryptocurrency applications.
 
@@ -1074,15 +1073,13 @@ p_corr_items
 
 ```
 
-The correlation matrix presents Spearman correlation coefficients for factors of Technology Readiness and Technology Acceptance. 
+The correlation matrix presents Spearman correlation coefficients for factors of Technology Readiness and Technology Acceptance.
 
-The data reveals several significant relationships among the eight variables examined. **Behavioral Intention to Use (BIU)** demonstrates **moderate positive correlations** with 
-**Perceived Ease of Use (0.557)**, **Perceived Usefulness (0.545)**, and **Optimism (0.531)**, suggesting these factors positively influence adoption intentions.
+The data reveals several significant relationships among the eight variables examined. **Behavioral Intention to Use (BIU)** demonstrates **moderate positive correlations** with **Perceived Ease of Use (0.557)**, **Perceived Usefulness (0.545)**, and **Optimism (0.531)**, suggesting these factors positively influence adoption intentions.
 
 The psychological constructs show interesting interconnections as well. **Perceived Risk** **correlates positively** with both **Discomfort (0.646)** and **Insecurity (0.553)**, indicating these negative perceptions tend to cluster together. Meanwhile, **Perceived Ease of Use** **strongly correlates** with **Perceived Usefulness (0.554)** and **Innovativeness (0.593)**, highlighting how these constructs reinforce each other.
 
 **Optimism** emerges as an important factor, showing **substantial positive correlations** with **Perceived Usefulness (0.686)**, **Innovativeness (0.544)**, and **Behavioral Intention to Use (0.531)**. This suggests that an optimistic outlook significantly enhances perceptions of technology value and adoption intentions. Notably, **Perceived Risk** shows **negative correlations** with most positive factors, particularly with **Innovativeness (-0.23)** and **Perceived Ease of Use (-0.174)**, demonstrating how risk perception can undermine positive technology assessments.
-
 
 # Exploratory Factor Analysis
 
