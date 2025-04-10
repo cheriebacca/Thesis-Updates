@@ -1,0 +1,1158 @@
+---
+title: "Analyzing the Perceived Intention to Adopt Cryptocurrency using Integrated Technology Readiness and Acceptance Model (TRAM): A PLS-SEM Approach"
+subtitle: "April 2025 Progress Review"
+author: "Cherie Joyce Bongcaras"
+date: "April 10, 2025"
+format: 
+  html:
+    self-contained: true
+    mainfont: calibri
+    fontsize: 1.1em
+    linestretch: 1.5
+    toc: true
+    toc-location: left
+    number-sections: true
+    code-fold: true
+    theme:
+      light: cosmo
+      dark: darkly
+execute:
+  message: false
+  warning: false
+  fig-align: center
+editor: visual
+---
+
+# Introduction
+
+The rapid digitalization of financial services has opened up new opportunities for the adoption of emerging technologies like **cryptocurrency** in the Philippines. Cryptocurrency, with its potential for decentralized, fast, and borderless transactions, has garnered significant attention as a transformative force in the Philippines' financial landscape (Santos & Cruz, 2023). However, widespread adoption remains hindered by concerns surrounding security, usability, and the perceived value of these virtual currencies (Garcia et al., 2024).
+
+This research employs the **Integrated Technology Readiness and Acceptance Model (TRAM)** framework (Parasuraman & Colby, 2015) to evaluate cryptocurrency adoption intentions in the Philippine context. The study examines four key **technology readiness dimensions** identified by Lin and Chang (2020): **optimism, innovativeness, insecurity,** and **discomfort**. These dimensions are analyzed in relation to two critical factors from the **Technology Acceptance Model** (Davis, 1989): **perceived ease of use** and **perceived usefulness**.
+
+## Main Objective
+
+To analyze the factors influencing the adoption of cryptocurrency among students of Visayas State University using an integrated approach that combines the Technology Readiness Index (TRI) and the Technology Acceptance Model (TAM).
+
+### Specific Objectives
+
+1.  To **describe** and compare the socio-demographics of Visayas State University students and in relation to their adoption of cryptocurrrency, within the context of an integrative framework combining the Technology Readiness Index (TRI) and the Technology Acceptance Model (TAM);
+
+2.  To **analyze** the interrelationships between inherent technology readiness (as measured by TRI) and perceived usefulness and ease of use (as measured by TAM) in the context of virtual currency adoption; and
+
+3.  To **contribute** to policy development by providing insights on the determinants of cryptocurrency adoption, which can inform strategies for promoting responsible use and regulation of digital currencies in academic and broader contexts.
+
+# Conceptual Framework
+
+![](images/Thesis_CF_RAGHHHH.jpeg)
+
+# Data and Descriptive Statistics
+
+The actual data collection commenced on **March 24, 2025**. As of **April 7, 2025**, a total of **208** respondents had participated in the study out of the **264** required.
+
+```{r}
+
+# Load libraries
+library(readxl)  # For reading Excel files
+library(dplyr)   # For data manipulation
+library(psych)   # For descriptive statistics
+library(tidyverse) # For data wrangling
+library(ggplot2)
+library(janitor)
+library(summarytools)
+library(kableExtra)
+library(knitr)
+library(plspm)
+library(melt)
+library(reshape2)
+library(EFAtools)
+
+# Import data
+df_208 <- read_excel("~/Thesis!/U1_Responses_208.xlsx", sheet = 2) |> 
+  clean_names()
+
+# data
+DT::datatable(df_208)
+
+```
+
+### Sociodemographic
+
+```{r}
+# Summarize data manually
+summary_df_208 <- df_208 |> 
+  select(sex, year_level, faculty, main_income, sec_income) |> 
+  summarise(
+    sex = paste0(unique(sex), collapse = ", "),
+    year_level = paste0(unique(year_level), collapse = ", "),
+    faculty = paste0(unique(faculty), collapse = ", "),
+    main_income = paste0(unique(main_income), collapse = ", "),
+    sec_income = paste0(unique(sec_income), collapse = ", "),
+  ) |> 
+  pivot_longer(cols = everything(), names_to = "Variables", values_to = "Summary")
+
+# Generate table
+summary_df_208 |>
+  kable(format = "html", col.names = c("Variables", "Summary"), align = "l") |>
+  kable_styling(full_width = F, fixed_thead = T, bootstrap_options = c("striped", "hover", "condensed", "responsive")) |>
+  row_spec(0, bold = TRUE) |> 
+  footnote(general = "Categorical variables are listed as unique values.")
+
+```
+
+```{r}
+# Function to calculate count and percentage within each variable
+categorical_summary_208 <- function(data, variable) {
+  data %>%
+    count(!!sym(variable)) %>%
+    mutate(Percentage = round(100 * n / sum(n), 1),
+           Summary = paste0(n, " (", Percentage, "%)")) %>%
+    rename(Category = !!sym(variable)) %>%
+    mutate(Variable = variable) %>%
+    select(Variable, Category, Summary)
+}
+
+# Process categorical variables separately
+categorical_variables_208 <- c("sex", "year_level", "faculty", "main_income", "sec_income")
+
+categorical_table_208 <- bind_rows(lapply(categorical_variables_208, function(var) categorical_summary_208(df_208, var)))
+
+# For Gen Z (18-28 years old)
+genz_table <- df_208 %>%
+  filter(age >= 18 & age <= 28) %>%
+  summarise(
+    Min = min(age, na.rm = TRUE),
+    Max = max(age, na.rm = TRUE),
+    Mean = round(mean(age, na.rm = TRUE), 2),
+    SD = round(sd(age, na.rm = TRUE), 2)
+  ) %>%
+  mutate(
+    Variable = "Age (Gen Z: 18–28)",
+    Summary = paste0("Mean: ", Mean, " (SD: ", SD, "), Min: ", Min, ", Max: ", Max)
+  ) %>%
+  select(Variable, Summary)
+
+# For Millennials (29-44 years old)
+millennial_table <- df_208 %>%
+  filter(age >= 29 & age <= 44) %>%
+  summarise(
+    Min = min(age, na.rm = TRUE),
+    Max = max(age, na.rm = TRUE),
+    Mean = round(mean(age, na.rm = TRUE), 2),
+    SD = round(sd(age, na.rm = TRUE), 2)
+  ) %>%
+  mutate(
+    Variable = "Age (Millennials: 29–44)",
+    Summary = paste0("Mean: ", Mean, " (SD: ", SD, "), Min: ", Min, ", Max: ", Max)
+  ) %>%
+  select(Variable, Summary)
+
+# Combine the tables if needed
+age_tables <- bind_rows(genz_table, millennial_table)
+
+# Display categorical table
+categorical_table_208 %>%
+  kable("html", caption = "Categorical Variables: Count(%) per variable") %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive")) 
+
+```
+
+```{r}
+# Create a combined continuous table for age by generation
+continuous_table_age_208 <- bind_rows(genz_table, millennial_table)
+
+# Display the continuous table
+continuous_table_age_208 %>%
+  kable("html", caption = "Age by Generation: Mean (SD), Min, Max") %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+## Visualization of Sociodemographic factors
+
+```{r}
+ggplot(df_208, aes(x = age, fill = ..count..)) +
+  geom_histogram(binwidth = 1, color = "black", alpha = 0.9) +  # Fill intensity based on count
+  theme_minimal() +
+  labs(title = "Age Distribution", x = "Age", y = "Frequency") +
+  scale_x_continuous(breaks = seq(min(df_208$age), max(df_208$age), by = 1)) + 
+  scale_fill_gradient(low = "skyblue", high = "navyblue") +  # Gradient from light to dark
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14), 
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.position = "none"  # Remove legend for cleaner look
+  )
+
+```
+
+```{r}
+# Bar Graph for Sex
+ggplot(df_208, aes(x = sex, fill = sex)) +  
+  geom_bar(color = "black", alpha = 0.8) + 
+  scale_fill_manual(values = c("mediumorchid", "navyblue", "coral")) +  
+  theme_minimal() +
+  labs(title = "Sex Distribution", x = NULL, y = "Count") +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),  
+    axis.title = element_text(size = 12),
+    axis.text.x = element_blank(),  
+    axis.ticks.x = element_blank(),  
+    legend.position = "right" 
+  )
+
+```
+
+The sex distribution of respondents indicates that the majority are female, followed by male respondents. A small portion of participants preferred not to disclose their sex. This suggests a slightly higher female representation in the sample.
+
+```{r}
+# Bar Graph for Year Level
+ggplot(df_208, aes(x = factor(year_level), fill = factor(year_level))) +
+  geom_bar(color = "black", alpha = 0.9) +  # Bar chart with border
+  theme_minimal() +
+  labs(title = "Distribution of Year Levels",
+       x = "Year Level",
+       y = "Count") +
+  scale_fill_manual(values = c("lightblue", "skyblue", "steelblue", "royalblue","dodgerblue", "navyblue")) +  # Custom colors
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.position = "none"  # Hide legend since x-axis labels are sufficient
+  )
+
+```
+
+The distribution of year levels shows that the majority of respondents are 4th-year students, followed equally by 3rd-year and 2nd-year students, then the number of 1st-yr students come into close. Finally, there are fewer participants from 5th-year and 6th-year levels, indicating that 4th-year students are more represented in the sample.
+
+```{r}
+# Bar Graph for Faculty
+ggplot(df_208, aes(x = faculty, fill = faculty)) +  
+  geom_bar(color = "black", alpha = 0.8) + 
+  scale_fill_manual(values = c("steelblue", "lightcoral", "mediumseagreen", 
+                               "gold", "orchid", "cadetblue", "tomato", 
+                               "darkseagreen", "khaki", "plum")) +  
+  theme_minimal() +
+  labs(title = "Faculty Distribution", x = NULL, y = "Count") +  
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),  
+    axis.title = element_text(size = 12),
+    axis.text.x = element_blank(),  
+    axis.ticks.x = element_blank(),  
+    legend.position = "right" 
+  )
+
+```
+
+The distribution of respondents across faculties shows that the Faculty of Management and Economics has the highest number of participants, followed by the Faculty of Agriculture and Food Sciences and the Faculty of Natural and Mathematical Sciences. The Faculty of Computing has the fewest respondents, indicating a lower representation from that group.
+
+```{r}
+
+# Bar Graph for Main Source of Income
+df_clean_208 <- df_208 |>  filter(main_income != "N/A") 
+
+ggplot(df_clean_208, aes(x = main_income, fill = main_income)) +  
+  geom_bar(color = "black", alpha = 0.8) +  
+  scale_fill_manual(values = c("lightblue", "skyblue", "steelblue", "royalblue","dodgerblue", "navyblue")) +  
+  theme_minimal() +
+  labs(title = "Main Source of Income", x = NULL, y = "Count") +  
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),  
+    axis.title = element_text(size = 12),
+    axis.text.x = element_blank(),  
+    axis.ticks.x = element_blank(),  
+    legend.position = "right" 
+  )
+
+```
+
+The majority of respondents rely on allowances from family or guardians as their main source of income, while a small portion depends on scholarships or educational grants. This suggests that financial support from family remains the primary means of sustaining students' expenses.
+
+```{r}
+# Bar Graph for Secondary Source of Income
+df_clean_208 <- df_208 |>  filter(sec_income != "N/A") 
+
+ggplot(df_clean_208, aes(x = sec_income, fill = sec_income)) +  
+  geom_bar(color = "black", alpha = 0.8) +  
+  scale_fill_manual(values = c("lightblue", "skyblue", "steelblue", "royalblue","dodgerblue","darkblue", "navyblue")) +  
+  theme_minimal() +
+  labs(title = "Secondary Source of Income", x = NULL, y = "Count") +  
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),  
+    axis.title = element_text(size = 12),
+    axis.text.x = element_blank(),  
+    axis.ticks.x = element_blank(),  
+    legend.position = "right" 
+  )
+
+```
+
+The majority of respondents still receive allowances from family or guardians as their secondary source of income. However, a notable number also rely on scholarships or educational grants, while a smaller portion earns through freelance/self-employed. This indicates that while family support remains significant, some students seek additional financial resources through scholarship or work.
+
+## Visualization of Technology and Cryptocurrency Familiarity factors
+
+### Internet Usage Habits
+
+```{r}
+# Bar Graph for Internet Usage Frequency
+df_summary_IUH_208 <- df_208 %>%
+  count(internet_freq, internet_hours)
+
+# Create enhanced grouped bar plot
+ggplot(data = df_summary_IUH_208, aes(x = internet_freq, y = n, fill = internet_hours)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +  # Add border to bars
+  scale_fill_manual(values = c("steelblue", "royalblue","dodgerblue","darkblue")) +  # Use custom colors
+  labs(title = "Internet Usage Frequency and Duration",
+       x = "Internet Frequency",
+       y = "Number of Respondents",
+       fill = "Internet Hours") +
+  theme_minimal(base_size = 14) +  # Increase base font size
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16),  # Center & bold title
+    axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.5),  # Improve x-axis labels
+    legend.position = "top",  # Move legend to top for better visibility
+    legend.title = element_text(face = "bold")  # Bold legend title
+  ) +
+  geom_text(aes(label = n), position = position_dodge(width = 0.9), vjust = -0.5, size = 5)  # Add count labels
+
+
+```
+
+The vast majority of participants (202 respondents) report daily internet usage, with 133 of them spending more than 5 hours online each day, representing nearly 64% of the total sample. Another 46 respondents use the internet daily for 3-5 hours, while 21 spend 1-3 hours daily and only 2 use it for less than 1 hour per day. In stark contrast, just 3 respondents report using the internet rarely (all for 3-5 hours when they do), and only 1 person indicates weekly internet use (for more than 5 hours). 
+
+These findings overwhelmingly demonstrate that **daily, extensive internet usage is the norm among this population**, with over 85% of respondents spending at least 3 hours online every day.
+
+### Digital Competency
+
+```{r}
+# Bar Graph for Digital Competency
+
+# Summarize counts
+df_summary_DC_208 <- df_208 %>%
+  count(digital_comf, online_trans)
+
+# Create bar plot
+ggplot(df_summary_DC_208, aes(x = digital_comf, y = n, fill = online_trans)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +  
+  scale_fill_manual(values = c("red", "navyblue")) +  
+  labs(title = "Digital Competency and Online Transactions",
+       x = "Digital Competency",
+       y = "Number of Respondents",
+       fill = "Online Transactions") +
+  theme_minimal(base_size = 14) +  
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16),  
+    axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 0.5),  
+    legend.position = "top",  
+    legend.title = element_text(face = "bold")  
+  ) +
+  geom_text(aes(label = n), position = position_dodge(width = 0.9), vjust = -0.5, size = 5)  
+
+```
+
+The overwhelming majority of participants (204 individuals, or 98% of respondents) report having digital competency, with most of these digitally competent individuals (190 respondents, or 93% of the total sample) also engaging in online transactions. Only 14 digitally competent respondents (7%) report not conducting online transactions despite their digital skills. Among the small minority who lack digital competency (just 4 respondents, or 2% of the sample), 3 individuals still don't participate in online transactions, while surprisingly, 1 respondent reports conducting online transactions despite lacking digital competency. 
+
+This data demonstrates an **extremely strong correlation between digital competency and online transaction behavior**, suggesting that digital literacy is nearly universal among the respondents and serves as a key enabler for online commercial activity.
+
+
+### Familiarity with Smart Tools
+
+```{r}
+
+# Bar Graph for Familiarity with Smart Tools
+df_208 %>%
+  separate_rows(smart_usage, sep = ", ") %>%
+  count(smart_usage) %>%
+  ggplot(aes(x = fct_reorder(smart_usage, n), y = n, fill = n)) +
+  geom_bar(stat = "identity", width = 0.6, color = "black") +
+  scale_fill_gradient(low = "lightblue", high = "navyblue", guide = "none") +  # Remove legend
+  labs(title = "Familiarity with Smart Tools",
+       x = "Smart Tool",
+       y = "Number of Respondents") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
+    axis.text.x = element_text(angle = 0, hjust = 0.5, size = 12),  # Center x-axis labels
+    axis.title.x = element_text(face = "bold"),
+    axis.title.y = element_text(face = "bold")
+  ) +
+  geom_text(aes(label = n), vjust = -0.5, size = 5)
+
+```
+
+Smartphones dominate as the most familiar device with 206 respondents (99% of the sample) indicating familiarity with them. Laptops follow as the second most familiar smart tool, with 129 respondents (62%) reporting familiarity. Tablets rank third with 45 respondents (22%) being familiar with them, while smartwatches show the lowest familiarity rate at only 19 respondents (9%). The data reveals a clear hierarchy in smart device familiarity, with nearly universal smartphone adoption but significantly lower familiarity with wearable technology like smartwatches. 
+
+This pattern suggests that while **mobile communication technology has reached near-complete penetration** among the respondents, newer categories of smart devices have not yet achieved the same level of familiarity or adoption.
+
+### Cryptocurrency Awareness
+
+```{r}
+
+# Bar Graph for Cryptocurrency Awareness
+df_summary_208 <- df_208 |> 
+  count(crypto_aware)
+
+ggplot(df_summary_208, aes(x = reorder(crypto_aware, -n), y = n, fill = crypto_aware)) +
+  geom_bar(stat = "identity", color = "black", alpha = 0.8) +
+  geom_text(aes(label = n), vjust = -0.5, size = 5) +  # Add count labels
+  scale_fill_manual(name = "Awareness Level", values = c(
+    "Yes, I am familiar with cryptocurrencies." = "navyblue",
+    "Yes, but I don't know much about them." = "steelblue",
+    "No, I have never heard of cryptocurrencies." = "red"
+  )) +
+  theme_minimal() +
+  labs(title = "Cryptocurrency Awareness",
+       x = NULL,
+       y = "Count") +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_blank(),  
+    axis.ticks.x = element_blank(),
+    legend.position = "right"
+  )
+
+```
+
+The largest group, comprising 130 respondents (62.5% of the sample), indicates basic awareness of cryptocurrencies but limited knowledge ("Yes, but I don't know much about them"). Meanwhile, 62 respondents (29.8%) report being familiar with cryptocurrencies ("Yes, I am familiar with cryptocurrencies"), suggesting a deeper understanding of the topic. Only 16 respondents (7.7%) indicate complete unfamiliarity with cryptocurrencies ("No, I have never heard of cryptocurrencies"). 
+
+These findings demonstrate that while cryptocurrency awareness is widespread among the survey population (92.3% have at least heard of cryptocurrencies), a significant knowledge gap exists, with less than a third of respondents claiming actual familiarity with the technology. This pattern suggests that while **most respondents recognize cryptocurrencies as a concept**, there remains substantial opportunity for education about their functionality and applications.
+
+### Cryptocurrency Ownership
+
+```{r}
+
+# Clean and handle 'None'
+df_clean_208 <- df_208 |> 
+  mutate(crypto_own2 = ifelse(is.na(crypto_own2) | crypto_own2 == "NA", "None", crypto_own2))
+
+# Split multiple selections
+df_long_208 <- df_clean_208 |> 
+  separate_rows(crypto_own2, sep = ",") |> 
+  mutate(crypto_own2 = trimws(crypto_own2)) |>  # Clean spaces
+  filter(crypto_own2 != "None") |>              # Remove "None"
+  group_by(crypto_own2) |> 
+  summarise(n = n()) |> 
+  arrange(desc(n)) |> 
+  as.data.frame()
+
+# Plot updated graph
+ggplot(df_long_208, aes(x = reorder(crypto_own2, -n), y = n, fill = n)) +
+  geom_bar(stat = "identity", color = "black", alpha = 0.8) +
+  geom_text(aes(label = n), vjust = -0.5, size = 5) +
+  scale_fill_gradient(low = "lightblue", high = "navyblue") +
+  theme_minimal() +
+  labs(title = "Cryptocurrency Ownership Count",
+       x = "Cryptocurrency",
+       y = "Number of Owners") +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.title = element_text(size = 12),
+    axis.text.x = element_text(size = 10, angle = 45, hjust = 1),  # Rotate for readability
+    legend.position = "none"
+  )
+
+
+```
+
+Bitcoin (BTC) emerges as the most popular cryptocurrency with 13 owners, followed by Ethereum (ETH) with 10 owners and XRP/Ripple with 7 owners. Tether (USDT) has 4 owners, while Binance Coin (BNB), Dogecoin (DOGE), and Solana (SOL) each have 3 owners. Less common cryptocurrencies are each owned by just 1 respondent. 
+
+This ownership pattern reflects the broader cryptocurrency market capitalization hierarchy, with the most established coins like Bitcoin and Ethereum having the highest adoption rates, followed by altcoins of decreasing market prominence. Overall, the data indicates that while **cryptocurrency ownership exists among respondents**, it represents a **relatively small subset of the current total 208 survey participants**, with Bitcoin ownership representing just 6.25% of the total sample.
+
+### Cryptocurrency Uses
+
+```{r}
+
+#Cryptocurrency Uses
+# Filter out N/A, NA, None, and irrelevant entries
+df_clean_208 <- df_208 %>%
+  filter(!is.na(crypto_what)) %>%
+  filter(!crypto_what %in% c("N/A", "NA", "None", 
+                             "NFTs, Trading Shitcoins and sometimes scalping altcoins"))
+
+# Summarize counts
+df_summary_208 <- df_clean_208 %>%
+  count(crypto_what)
+
+# Plot the filtered chart
+ggplot(df_summary_208, aes(x = reorder(crypto_what, -n), y = n, fill = crypto_what)) +  
+  geom_bar(stat = "identity", color = "black", alpha = 0.8) +  
+  geom_text(aes(label = n), vjust = -0.5, size = 5) +
+  scale_fill_manual(values = c("steelblue", "lightcoral", "mediumseagreen", "darkseagreen")) +
+  theme_minimal() +
+  labs(title = "Cryptocurrency Uses", x = NULL, y = "Count") +  
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.title = element_text(size = 12),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    legend.position = "right"
+  )
+
+
+```
+
+Investment and trading activities overwhelmingly dominate as the primary use case, with 19 respondents (approximately 73% of cryptocurrency users) employing cryptocurrencies for this purpose. Gaming and metaverse applications represent the second most common usage, reported by 5 respondents (19% of users). Long-term holding and payments/purchases are each utilized by just 1 respondent, representing only about 4% of cryptocurrency users for each category. 
+
+This distribution strongly suggests that **investment and trading** remain the **predominant motivation for cryptocurrency ownership** among the survey participants, with utility-based applications like gaming and payments being significantly less common. When considered alongside the previous cryptocurrency ownership data, these findings indicate that roughly 13% of the total 208 survey respondents own cryptocurrencies, with investment and trading being the primary motivation for approximately 9% of the entire sample.
+
+## Technology Readiness
+
+```{r}
+
+# TECHNOLOGY READINESS
+# OPTIMISM
+
+# Pivot data to long format
+df_long_OPT_208 <- df_208 %>%
+  pivot_longer(cols = starts_with("opt"), 
+               names_to = "Question", 
+               values_to = "Response") %>%
+  group_by(Question, Response) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+# Convert Response to factor for proper ordering
+df_long_OPT_208$Response <- factor(df_long_OPT_208$Response, levels = c(1, 2, 3, 4, 5))
+
+# Mapping of opt1-opt6 to actual statements (wrapped for better readability)
+question_labels <- c(
+  "opt1" = str_wrap("Using cryptocurrency gives me more control over my financial activities.", width = 50),
+  "opt2" = str_wrap("Cryptocurrency is more efficient because it utilizes the latest financial technologies.", width = 50),
+  "opt3" = str_wrap("Cryptocurrency does not limit me to traditional banking business hours.", width = 50),
+  "opt4" = str_wrap("Using cryptocurrency makes my financial transactions more efficient.", width = 50),
+  "opt5" = str_wrap("Cryptocurrency gives me greater freedom and flexibility in financial activities.", width = 50),
+  "opt6" = str_wrap("I feel confident that cryptocurrency will deliver what I expect from it.", width = 50)
+)
+
+# Create the horizontal stacked bar plot
+ggplot(df_long_OPT_208, aes(x = Question, y = Count, fill = Response)) +
+  geom_bar(stat = "identity", position = "fill") +  
+  geom_text(aes(label = Count), position = position_fill(vjust = 0.5), size = 4, color = "white") +  
+  scale_fill_manual(values = c("#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"),
+                    labels = c("Strongly Disagree", "2", "3", "4", "Strongly Agree")) +  
+  coord_flip() +  
+  scale_x_discrete(labels = question_labels) +  
+  labs(
+    title = "OPTIMISM",
+    x = NULL,
+    y = "Proportion of Responses",
+    fill = "Response"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.spacing.x = unit(0.5, 'cm')  # Increase space between legend items
+  ) +
+  guides(fill = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1))
+
+```
+
+This stacked bar chart depicts respondents' levels of optimism regarding various aspects of cryptocurrency technology. 
+
+For each statement measuring optimism toward cryptocurrency benefits, the majority of respondents selected the middle option (3 on the scale), indicating a predominantly neutral stance. 
+
+The statement with the highest level of agreement is "Using cryptocurrency gives me more control over my financial activities," with 120 respondents (58%) choosing the neutral option and 51 respondents (24%) expressing some level of agreement. Similarly, statements about cryptocurrency delivering expectations and utilizing the latest financial technologies received moderately positive responses. The aspect with the most skepticism appears to be regarding cryptocurrency offering freedom and flexibility in financial activities, with 70 respondents (34%) expressing some level of disagreement. 
+
+Overall, the visualization reveals a **cautious optimism** among the survey participants, with most maintaining a neutral position while slightly more respondents lean toward agreement than disagreement across all cryptocurrency benefit statements. This suggests that while **respondents recognize potential advantages of cryptocurrency technology**, **widespread strong enthusiasm remains limited**.
+
+```{r}
+
+# INNOVATIVENESS
+
+# Pivot data to long format
+df_long_INN_208 <- df_208 %>%
+  pivot_longer(cols = starts_with("inn"), 
+               names_to = "Question", 
+               values_to = "Response") %>%
+  group_by(Question, Response) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+# Convert Response to factor for proper ordering
+df_long_INN_208$Response <- factor(df_long_INN_208$Response, levels = c(1, 2, 3, 4, 5))
+
+# Mapping of opt1-opt6 to actual statements (wrapped for better readability)
+question_labels <- c(
+  "inn1" = str_wrap("I believe I can already provide information to potential adopters of cryptocurrency, as I have some experience and knowledge to share.", width = 50),
+  "inn2" = str_wrap("I believe that in general, I can be among the first in my circle of friends to use new cryptocurrency technologies when they appear.", width = 50),
+  "inn3" = str_wrap("I believe that I can usually figure out new cryptocurrencies without help from others.", width = 50),
+  "inn4" = str_wrap("I believe that I can keep up with the latest news about cryptocurrency.", width = 50),
+  "inn5" = str_wrap("I believe that I enjoy the challenge of figuring out developents of cyrptocurrency.", width = 50),
+  "inn6" = str_wrap("I believe that I encounter fewer problems in using cryptocurrency compared ot others.", width = 50)
+)
+
+# Create the horizontal stacked bar plot
+ggplot(df_long_INN_208, aes(x = Question, y = Count, fill = Response)) +
+  geom_bar(stat = "identity", position = "fill") +  
+  geom_text(aes(label = Count), position = position_fill(vjust = 0.5), size = 4, color = "white") +  
+  scale_fill_manual(values = c("#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"),
+                    labels = c("Strongly Disagree", "2", "3", "4", "Strongly Agree")) +  
+  coord_flip() +  
+  scale_x_discrete(labels = question_labels) +  
+  labs(
+    title = "INNOVATIVENESS",
+    x = NULL,
+    y = "Proportion of Responses",
+    fill = "Response"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.spacing.x = unit(0.5, 'cm')  # Increase space between legend items
+  ) +
+  guides(fill = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1))
+
+```
+
+The stacked bar chart illustrates respondents' self-assessments of their innovativeness regarding cryptocurrency adoption and understanding. 
+
+The statement "I believe that I enjoy the challenge of figuring out developments of cryptocurrency" received the highest level of agreement, with 59 respondents (28%) selecting agreement options (4 or 5). Conversely, the statements with the strongest disagreement were "I believe I can already provide information to potential adopters of cryptocurrency" and "I believe that I can usually figure out new cryptocurrencies without help from others," with 127 respondents (61%) and 118 respondents (57%) respectively expressing some level of disagreement (1 or 2). The neutral option (3) remains the most common response across all statements, particularly for "I believe that I encounter fewer problems in using cryptocurrency compared to others" (80 respondents, 38%). 
+
+Overall, this visualization demonstrates that while **respondents show some interest in cryptocurrency developments**, **most do not consider themselves early adopters, innovators, or knowledgeable resources** in the cryptocurrency space, suggesting a perception gap between interest in the technology and personal capability or experience with it.
+
+```{r}
+
+# INSECURITY
+
+# Pivot data to long format
+df_long_INS_208 <- df_208 %>%
+  pivot_longer(cols = starts_with("ins"), 
+               names_to = "Question", 
+               values_to = "Response") %>%
+  group_by(Question, Response) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+# Convert Response to factor for proper ordering
+df_long_INS_208$Response <- factor(df_long_INS_208$Response, levels = c(1, 2, 3, 4, 5))
+
+# Mapping of opt1-opt6 to actual statements (wrapped for better readability)
+question_labels <- c(
+  "ins1" = str_wrap("I believe that cryptocurrency are not helpful because the language is too technical.", width = 50),
+  "ins2" = str_wrap("I believe that sometimes, cryptocurrency is not designed for use by ordinary people.", width = 50),
+  "ins3" = str_wrap("I believe that if I would use cryptocurrency, I prefer to have a single mobile wallet over having two or more.", width = 50),
+  "ins4" = str_wrap("I believe that I would feel embarrased when I have trouble effecting a financial transaciton through cryptocurrency.", width = 50),
+  "ins5" = str_wrap("I believe that new technology like cryptocurrency makes it too easy for governments and companies to spy on people.", width = 50),
+  "ins6" = str_wrap("I believe that cryptocurrency always seems to fail at the worst possible time; it cannot be relied on.", width = 50)
+)
+
+# Create the horizontal stacked bar plot
+ggplot(df_long_INS_208, aes(x = Question, y = Count, fill = Response)) +
+  geom_bar(stat = "identity", position = "fill") +  
+  geom_text(aes(label = Count), position = position_fill(vjust = 0.5), size = 4, color = "white") +  
+  scale_fill_manual(values = c("#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"),
+                    labels = c("Strongly Disagree", "2", "3", "4", "Strongly Agree")) +  
+  coord_flip() +  
+  scale_x_discrete(labels = question_labels) +  
+  labs(
+    title = "INSECURITY",
+    x = NULL,
+    y = "Proportion of Responses",
+    fill = "Response"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.spacing.x = unit(0.5, 'cm')  # Increase space between legend items
+  ) +
+  guides(fill = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1))
+
+```
+
+The stacked bar chart presents respondents' feelings of insecurity regarding various aspects of cryptocurrency use. 
+
+The statement generating the strongest agreement is "I believe that sometimes, cryptocurrency is not designed for use by ordinary people," with 109 respondents (52%) expressing some level of agreement (4 or 5). This suggests a significant perception that cryptocurrency technology remains inaccessible to average users. Similarly, concerns about surveillance received substantial agreement, with 59 respondents (28%) agreeing that cryptocurrency makes it too easy for governments and companies to spy on people. The neutral option (3) remains predominant across most statements, particularly for "I believe that cryptocurrency always seems to fail at the worst possible time" (97 respondents, 47%). Regarding wallet preferences, 83 respondents (40%) agree they would prefer a single mobile wallet rather than managing multiple wallets. The technical language barrier of cryptocurrency also emerges as a concern, with 40 respondents (19%) agreeing that cryptocurrency is not helpful due to overly technical language. 
+
+Overall, this visualization reveals **significant insecurity** about cryptocurrency's user-friendliness, reliability, and potential surveillance issues, highlighting key barriers to wider adoption despite the interest shown in previous charts.
+
+```{r}
+
+# DISCOMFORT
+
+# Pivot data to long format
+df_long_DIS_208 <- df_208 %>%
+  pivot_longer(cols = starts_with("dis"), 
+               names_to = "Question", 
+               values_to = "Response") %>%
+  group_by(Question, Response) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+# Convert Response to factor for proper ordering
+df_long_DIS_208$Response <- factor(df_long_DIS_208$Response, levels = c(1, 2, 3, 4, 5))
+
+# Mapping of opt1-opt6 to actual statements (wrapped for better readability)
+question_labels <- c(
+  "dis1" = str_wrap("I do not consider it safe to conduct financial transactions with cryptocurrency from more than one platforms or services.", width = 50),
+  "dis2" = str_wrap("I believe that other people will see the personal information I send over the internet regarding my cryptocurrency activities.", width = 50),
+  "dis3" = str_wrap("I do not feel confident using many cryptocurrency platforms or services.", width = 50),
+  "dis4" = str_wrap("I believe that in every cryptocurrency financial transaction, I need to check carefully that the system is not making mistakes.", width = 50),
+  "dis5" = str_wrap("I believe that when I need assistance with cryptocurrency, I prefer to interact with a person rather than an automated system.", width = 50),
+  "dis6" = str_wrap("I believe that if I provide information to the internet about cryptocurrency, I can never be sure it really gets to the right place.", width = 50)
+)
+
+# Create the horizontal stacked bar plot
+ggplot(df_long_DIS_208, aes(x = Question, y = Count, fill = Response)) +
+  geom_bar(stat = "identity", position = "fill") +  
+  geom_text(aes(label = Count), position = position_fill(vjust = 0.5), size = 4, color = "white") +  
+  scale_fill_manual(values = c("#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"),
+                    labels = c("Strongly Disagree", "2", "3", "4", "Strongly Agree")) +  
+  coord_flip() +  
+  scale_x_discrete(labels = question_labels) +  
+  labs(
+    title = "DISCOMFORT",
+    x = NULL,
+    y = "Proportion of Responses",
+    fill = "Response"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.spacing.x = unit(0.5, 'cm')  # Increase space between legend items
+  ) +
+  guides(fill = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1))
+
+```
+
+The stacked bar chart illustrates respondents' discomfort with various aspects of cryptocurrency usage. 
+
+The statement generating the strongest agreement is "I believe that when I need assistance with cryptocurrency, I prefer to interact with a person rather than an automated system," with 57 respondents strongly agreeing and another 57 agreeing (levels 4-5), indicating a clear preference for human support over automated solutions. Similarly, high levels of concern are shown regarding transaction verification, with 60 respondents strongly agreeing and 69 agreeing that they need to carefully check that systems aren't making mistakes. Significant discomfort is also expressed about information privacy, with 39 respondents strongly agreeing they can never be sure shared information reaches the right place.
+
+The neutral option (3) appears most prominent in statements about privacy concerns, with 86 respondents neutral about others seeing their personal information. Notably, respondents show consistent discomfort across cryptocurrency platforms, with 35 strongly agreeing and 64 agreeing they don't feel confident using many cryptocurrency services. Regarding transaction safety, 24 respondents strongly agree and 47 agree they don't consider it safe to conduct financial transactions across multiple platforms.
+
+Overall, this visualization reveals **significant discomfort regarding cryptocurrency's reliability, user experience, and security concerns**, highlighting substantial trust barriers that may impede wider adoption despite interest shown in other metrics.
+
+```{r}
+
+# PERCEIVED USEFULNESS
+
+# Pivot data to long format
+df_long_PUN_208 <- df_208 %>%
+  pivot_longer(cols = starts_with("pun"), 
+               names_to = "Question", 
+               values_to = "Response") %>%
+  group_by(Question, Response) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+# Convert Response to factor for proper ordering
+df_long_PUN_208$Response <- factor(df_long_PUN_208$Response, levels = c(1, 2, 3, 4, 5))
+
+# Mapping of opt1-opt6 to actual statements (wrapped for better readability)
+question_labels <- c(
+  "pun1" = str_wrap("I believe that using cryptocurrency enables me to carry out financial transaction more quickly.", width = 50),
+  "pun2" = str_wrap("I believe that using cryptocurrency in my financial transactions increases my efficiency.", width = 50),
+  "pun3" = str_wrap("I believe that using cryptocurrency increases my productivity.", width = 50),
+  "pun4" = str_wrap("I believe that using cryptocurrency in my financial dealings enhances my effectiveness in terms of accuracy and speed of transaction.", width = 50),
+  "pun5" = str_wrap("I believe that using cryptocurrency makes it easier to do my finnacial transactions.", width = 50),
+  "pun6" = str_wrap("I believe overall, I find cryptocurrency useful in my financial dealings.", width = 50)
+)
+
+# Create the horizontal stacked bar plot
+ggplot(df_long_PUN_208, aes(x = Question, y = Count, fill = Response)) +
+  geom_bar(stat = "identity", position = "fill") +  
+  geom_text(aes(label = Count), position = position_fill(vjust = 0.5), size = 4, color = "white") +  
+  scale_fill_manual(values = c("#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"),
+                    labels = c("Strongly Disagree", "2", "3", "4", "Strongly Agree")) +  
+  coord_flip() +  
+  scale_x_discrete(labels = question_labels) +  
+  labs(
+    title = "PERCEIVED USEFULNESS",
+    x = NULL,
+    y = "Proportion of Responses",
+    fill = "Response"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.spacing.x = unit(0.5, 'cm')  # Increase space between legend items
+  ) +
+  guides(fill = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1))
+
+```
+
+The stacked bar chart displays respondents' perceptions of cryptocurrency's usefulness across various financial applications. 
+
+The most prominent pattern is the prevalence of neutral responses (3) across all statements, with approximately 90-110 respondents selecting this middle option for each item, suggesting widespread uncertainty or ambivalence about cryptocurrency's practical benefits. The statement generating the strongest positive sentiment is "I believe that using cryptocurrency enables me to carry out financial transactions more quickly," with 13 respondents strongly agreeing and 55 agreeing (levels 4-5), indicating speed is perceived as cryptocurrency's most valuable attribute.
+
+Similarly, efficiency receives relatively strong positive assessment, with 14 respondents strongly agreeing and 49 agreeing that cryptocurrency increases transaction efficiency. The statement about overall usefulness shows moderate agreement levels (15 strongly agree, 36 agree), while productivity enhancement receives the lowest positive assessment (12 strongly agree, 35 agree). Notably, disagreement levels remain fairly consistent across all statements, with approximately 45-57 respondents expressing some level of disagreement with each statement.
+
+Overall, this visualization reveals a **cautious perspective on cryptocurrency's practical utility**, with a significant portion of respondents remaining neutral while those expressing definitive opinions tend to be almost evenly split between positive and negative assessments, suggesting cryptocurrency's perceived usefulness remains contested rather than widely accepted.
+
+```{r}
+
+# PERCEIVED EASE OF USE
+
+# Pivot data to long format
+df_long_PEU_208 <- df_208 %>%
+  pivot_longer(cols = starts_with("peu"), 
+               names_to = "Question", 
+               values_to = "Response") %>%
+  group_by(Question, Response) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+# Convert Response to factor for proper ordering
+df_long_PEU_208$Response <- factor(df_long_PEU_208$Response, levels = c(1, 2, 3, 4, 5))
+
+# Mapping of opt1-opt6 to actual statements (wrapped for better readability)
+question_labels <- c(
+  "peu1" = str_wrap("I believe that learning to operate cryptocurrency apps has been very ease for me.", width = 50),
+  "peu2" = str_wrap("I believe that I find it easy to follow instructions with cryptocurrency to accomplish my transactions.", width = 50),
+  "peu3" = str_wrap("I believe that cryptocurrency instructions are clearer and understandable to me.", width = 50),
+  "peu4" = str_wrap("I believe that I find it convenient and easy to use cryptocurrency.", width = 50),
+  "peu5" = str_wrap("I believe that it is easy for me to remember how to perform tasks using cryptocurrency.", width = 50),
+  "peu6" = str_wrap("I believe that overall, I find that cryptocurrency is easy to use.", width = 50)
+)
+
+# Create the horizontal stacked bar plot
+ggplot(df_long_PEU_208, aes(x = Question, y = Count, fill = Response)) +
+  geom_bar(stat = "identity", position = "fill") +  
+  geom_text(aes(label = Count), position = position_fill(vjust = 0.5), size = 4, color = "white") +  
+  scale_fill_manual(values = c("#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"),
+                    labels = c("Strongly Disagree", "2", "3", "4", "Strongly Agree")) +  
+  coord_flip() +  
+  scale_x_discrete(labels = question_labels) +  
+  labs(
+    title = "PERCEIVED EASE OF USE",
+    x = NULL,
+    y = "Proportion of Responses",
+    fill = "Response"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.spacing.x = unit(0.5, 'cm')  # Increase space between legend items
+  ) +
+  guides(fill = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1))
+
+```
+
+The stacked bar chart illustrates respondents' perceptions regarding the ease of use of cryptocurrency across various dimensions. 
+
+The data shows a strong predominance of neutral responses (3) across all statements, with approximately 85-98 respondents selecting this middle option for each item, suggesting widespread uncertainty about cryptocurrency's user-friendliness. The statement generating the most disagreement is "I believe that learning to operate cryptocurrency apps has been very easy for me," with 33 respondents strongly disagreeing and 48 disagreeing (levels 1-2), indicating significant challenges in the learning curve for cryptocurrency applications.
+
+All statements show similar patterns of response distribution, with slightly more respondents leaning toward disagreement than agreement. For example, regarding overall ease of use, 29 respondents strongly disagree and 51 disagree, compared to 8 strongly agreeing and 34 agreeing. The clarity of cryptocurrency instructions shows similar skepticism, with 24 strongly disagreeing and 44 disagreeing that instructions are clear and understandable, while only 6 strongly agree and 36 agree.
+
+Overall, this visualization reveals **significant skepticism about cryptocurrency's ease of use**, with most respondents either neutral or leaning toward disagreement across all usability dimensions. This suggests that usability remains a substantial barrier to cryptocurrency adoption, aligning with the discomfort metrics seen in previous charts and highlighting a critical area for improvement if wider adoption is the goal.
+
+## Perceived Risk
+
+```{r}
+
+# PERCEIVED RISK
+
+df_long_PER_208 <- df_208 %>%
+  pivot_longer(cols = starts_with("per"), names_to = "Question", values_to = "Response") %>%
+  mutate(Response = as.numeric(Response)) %>%  # Ensure it's numeric
+  filter(Response %in% c(1, 2, 3, 4, 5)) %>%  # Keep only valid responses
+  group_by(Question, Response) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+df_long_PER_208$Response <- factor(df_long_PER_208$Response, levels = c(1, 2, 3, 4, 5))  # Proper order
+
+# Mapping of opt1-opt6 to actual statements (wrapped for better readability)
+question_labels <- c(
+  "per1" = str_wrap("I believe that using cryptocurrency involves a high level of financial risk.", width = 50),
+  "per2" = str_wrap("I believe that my personal information is at risk when using cryptocurrency.", width = 50),
+  "per3" = str_wrap("I believe that the chances of fraud when using cryptocurrency are high.", width = 50),
+  "per4" = str_wrap("I feel that the lack of regulation increases the uncertainty if using cryptocurrency.", width = 50),
+  "per5" = str_wrap("I believe that the security measures in cryptocurrency platforms are insufficient.", width = 50),
+  "per6" = str_wrap("I believe that overall, using cryptocurrency is risky for financial transactions.", width = 50)
+)
+
+# Create the horizontal stacked bar plot
+ggplot(df_long_PER_208, aes(x = Question, y = Count, fill = Response)) +
+  geom_bar(stat = "identity", position = "fill") +  
+  geom_text(aes(label = Count), position = position_fill(vjust = 0.5), size = 4, color = "white") +  
+  scale_fill_manual(values = c("#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"),
+                    labels = c("Strongly Disagree", "2", "3", "4", "Strongly Agree")) +  
+  coord_flip() +  
+  scale_x_discrete(labels = question_labels) +  
+  labs(
+    title = "Perceived Risk",
+    x = NULL,
+    y = "Proportion of Responses",
+    fill = "Response"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.spacing.x = unit(0.5, 'cm')  # Increase space between legend items
+  ) +
+  guides(fill = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1))
+
+```
+
+The stacked bar chart displays respondents' perceptions of risk associated with cryptocurrency usage across various dimensions. Unlike previous charts, this one shows a strong skew toward agreement, indicating widespread concern about cryptocurrency risks. The statement generating the strongest agreement is "I feel that the lack of regulation increases the uncertainty if using cryptocurrency," with 52 respondents strongly agreeing and 89 agreeing (levels 4-5), clearly identifying regulatory uncertainty as the primary risk factor.
+
+Similarly high levels of agreement appear regarding fraud concerns, with 54 respondents strongly agreeing and 82 agreeing that chances of fraud are high when using cryptocurrency. Personal information security also emerges as a major concern, with 53 respondents strongly agreeing and 48 agreeing their information is at risk. The statement about overall riskiness for financial transactions shows substantial agreement (49 strongly agree, 61 agree), while only 24 respondents express some level of disagreement.
+
+Notably, the neutral responses (3) are much less prevalent compared to previous charts, appearing most frequently in the general statement about cryptocurrency being risky (74 respondents). The statement about financial risk shows the strongest consensus, with 106 respondents expressing agreement (45 strongly agree, 61 agree) compared to just 13 disagreeing.
+
+Overall, this visualization reveals a clear consensus regarding cryptocurrency's perceived risks, with **strong majorities expressing concerns across all risk dimensions**, particularly regarding regulation, fraud potential, and financial vulnerability. This contrasts sharply with the more divided or neutral opinions seen in previous charts about usefulness and ease of use.
+
+## Behavioral Intention to Use
+
+```{r}
+
+# BEHAVIORAL INTENTION TO USE
+
+# Pivot data to long format
+df_long_BIU_208 <- df_208 %>%
+  pivot_longer(cols = starts_with("biu"), names_to = "Question", values_to = "Response") %>%
+  mutate(Response = as.numeric(Response)) %>%  # Ensure it's numeric
+  filter(Response %in% c(1, 2, 3, 4, 5)) %>%  # Keep only valid responses
+  group_by(Question, Response) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+df_long_BIU_208$Response <- factor(df_long_BIU_208$Response, levels = c(1, 2, 3, 4, 5))  # Proper order
+
+# Mapping of opt1-opt6 to actual statements (wrapped for better readability)
+question_labels <- c(
+  "biu1" = str_wrap("I intend to use/continue cryptocurrency for my financial transactions in the near future.", width = 50),
+  "biu2" = str_wrap("I will likely adopt/continue to use cryptocurrency as a means of payment in the coming year.", width = 50),
+  "biu3" = str_wrap("I plan to increase my usage of cryptocurrency platforms and services over time.", width = 50),
+  "biu4" = str_wrap("The likelihood of me starting/continuing to use cryptocurrency is high.", width = 50),
+  "biu5" = str_wrap("I am committeed to incorporating cryptocurrency into my financial habits and routines.", width = 50),
+  "biu6" = str_wrap("I believe overall, I expect to actively engage with and utilize cryptocurrency on a regular basis.", width = 50)
+)
+
+# Create the horizontal stacked bar plot
+ggplot(df_long_BIU_208, aes(x = Question, y = Count, fill = Response)) +
+  geom_bar(stat = "identity", position = "fill") +  
+  geom_text(aes(label = Count), position = position_fill(vjust = 0.5), size = 4, color = "white") +  
+  scale_fill_manual(values = c("#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"),
+                    labels = c("Strongly Disagree", "2", "3", "4", "Strongly Agree")) +  
+  coord_flip() +  
+  scale_x_discrete(labels = question_labels) +  
+  labs(
+    title = "Behavioral Intention to Use",
+    x = NULL,
+    y = "Proportion of Responses",
+    fill = "Response"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.spacing.x = unit(0.5, 'cm')  # Increase space between legend items
+  ) +
+  guides(fill = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1))
+
+```
+
+The stacked bar chart illustrates respondents' behavioral intentions regarding cryptocurrency usage across several dimensions. Unlike the previous risk perception chart, this visualization shows a distinct skew toward disagreement, indicating limited intention to adopt or continue using cryptocurrency. The statement showing the strongest disagreement is "I intend to use/continue cryptocurrency for my financial transactions in the near future," with 22 respondents strongly disagreeing and 26 disagreeing (levels 1-2), while only 44 strongly agree and 49 agree.
+
+Similarly low intention appears regarding cryptocurrency adoption as a payment method, with 27 respondents strongly disagreeing and 28 disagreeing that they will likely use cryptocurrency as a payment means in the coming year. The commitment to incorporating cryptocurrency into financial routines shows comparable resistance, with 32 strongly disagreeing and 33 disagreeing, versus 38 strongly agreeing and 48 agreeing.
+
+The most neutral response pattern appears in the general statement about expecting to actively engage with cryptocurrency, with 77 respondents selecting the middle option. However, even here, there are more respondents expressing disagreement (75 total) than agreement (56 total).
+
+Overall, this visualization reveals **significant hesitation regarding future cryptocurrency adoption**, with most statements showing more disagreement than agreement. This aligns with the strong risk perceptions seen in the previous chart and suggests that despite some recognition of potential usefulness, the perceived risks and usability challenges appear to outweigh benefits for many respondents, resulting in limited intention to engage with cryptocurrency going forward.
+
+## TRI and TAM Correlations
+
+```{r}
+df_208_corr <- 
+  df_208 %>% 
+  mutate("Optimism" = select(., opt1:opt6) %>% rowSums(),
+         "Innovativeness" = select(., inn1:inn6) %>% rowSums(),
+         "Insecurity" = select(., ins1:ins6) %>% rowSums(),
+         "Discomfort" = select(., dis1:dis6) %>% rowSums(),
+         "Perceived Usefulness" = select(., pun1:pun6) %>% rowSums(),
+         "Perceived Ease of Use" = select(., peu1:peu6) %>% rowSums(),
+         "Perceived Risk" = select(., per1:per6) %>% rowSums(),
+         "Behavioral Intention to Use" = select(., biu1:biu6) %>% rowSums(),
+  ) %>% 
+  select("Optimism":"Behavioral Intention to Use") %>% 
+  na.omit()
+
+cor_mat <- round(cor(df_208_corr, method = "spearman"), 3)
+cor_mat[lower.tri(cor_mat)] <- NA
+melted_cormat <- melt(cor_mat)
+
+str_wrap_factor <- function(x, ...) {
+  levels(x) <- str_wrap(levels(x), ...)
+  x
+}
+
+melted_cormat_heatmap <- 
+  melted_cormat %>% 
+  mutate(Var2 = fct_rev(Var2),
+         Var1 = factor(Var1),
+         Var1 = str_wrap_factor(Var1, width = 32)
+  ) %>% 
+  na.omit()
+
+label_data <-  
+  melted_cormat_heatmap %>% 
+  count(Var1) %>% 
+  mutate(Var1 = as.character(Var1),
+         Var2 = unique(melted_cormat_heatmap$Var2)) %>% 
+  mutate(x_labs = c("BIU", "PER", "PEU", "PUN", "DIS", "INS", "INN", "OPT") %>% rev())
+
+
+p_corr_items <- melted_cormat_heatmap %>%      
+  ggplot(aes(x = Var2, y = Var1, fill = value)) +
+  geom_tile() +
+  geom_text(aes(label = value), color = "white", fontface = "bold") +
+  geom_text(data = label_data, aes(label = Var1, y = Var1, x = -0.1), 
+            inherit.aes = F,
+            size = 4,
+            fontface = "bold",
+            vjust = 0.5,
+            hjust = 1) +
+  geom_text(data = label_data, aes(label = x_labs, y = 0, x = Var2), 
+            inherit.aes = F,
+            vjust = 0,
+            fontface = "bold",
+            color = "grey20") +
+  geom_text(data = label_data, aes(label = x_labs, y = Var1, x = 0.1), 
+            inherit.aes = F,
+            angle = 90,
+            vjust = 1,
+            fontface = "bold",
+            color = "grey20") +
+  scale_fill_gradient(low = "#c6dbef", high = "#08519c", 
+                      limit = c(0, 1), space = "Lab") +
+  scale_x_discrete(position = "top") +
+  guides(fill = guide_colorbar(title.position = "top",
+                               title.hjust = 0.5, 
+                               nrow = 1
+  )) +
+  coord_cartesian(clip = "off") +
+  theme_minimal() +
+  theme(plot.margin = margin(20, 20, 20, 180),
+        plot.caption.position = "panel",
+        plot.caption = element_text(hjust = 1, margin = margin(t=20), size = 12, color = "grey20", lineheight = 1.1),
+        panel.grid = element_blank(),
+        axis.text = element_blank(),
+        legend.position = c(0.80, 0.90),
+        legend.key.width = unit(10, "mm"),
+        legend.direction = "horizontal",
+        legend.title = element_text(size = 14),
+        legend.text = element_text(size = 10)
+  ) +
+  labs(fill = "Spearman correlation",
+       x = element_blank(),
+       y = element_blank())
+
+# Display the plot
+p_corr_items
+
+```
+
+The correlation matrix presents Spearman correlation coefficients for factors of Technology Readiness and Technology Acceptance. 
+
+The data reveals several significant relationships among the eight variables examined. **Behavioral Intention to Use (BIU)** demonstrates **moderate positive correlations** with 
+**Perceived Ease of Use (0.557)**, **Perceived Usefulness (0.545)**, and **Optimism (0.531)**, suggesting these factors positively influence adoption intentions.
+
+The psychological constructs show interesting interconnections as well. **Perceived Risk** **correlates positively** with both **Discomfort (0.646)** and **Insecurity (0.553)**, indicating these negative perceptions tend to cluster together. Meanwhile, **Perceived Ease of Use** **strongly correlates** with **Perceived Usefulness (0.554)** and **Innovativeness (0.593)**, highlighting how these constructs reinforce each other.
+
+**Optimism** emerges as an important factor, showing **substantial positive correlations** with **Perceived Usefulness (0.686)**, **Innovativeness (0.544)**, and **Behavioral Intention to Use (0.531)**. This suggests that an optimistic outlook significantly enhances perceptions of technology value and adoption intentions. Notably, **Perceived Risk** shows **negative correlations** with most positive factors, particularly with **Innovativeness (-0.23)** and **Perceived Ease of Use (-0.174)**, demonstrating how risk perception can undermine positive technology assessments.
+
+
+# Exploratory Factor Analysis
+
+## Determining the Appropriateness of EFA
+
+### Bartlett test
+
+```{r}
+
+# Create a new dataset with only column 17 and beyond
+df_208_subset <- df_208[, 17:ncol(df_208)]
+
+
+# BARTLETT TEST
+BARTLETT(df_208_subset, N= nrow(df_208_subset))
+
+```
+
+### Kaiser-Meyen-Olkin (KMO Test)
+
+```{r}
+
+# KAISER-MEYEN-OLKIN (KMO Test)
+KMO(df_208_subset)
+
+```
+
+## Exploring possible factors
+
+### Kaiser-Guttman Criterion
+
+```{r}
+
+# KAISER-GUTTMAN CRITERION
+KGC(df_208_subset, eigen_type = "EFA")
+
+```
+
+### Scree Test
+
+```{r}
+# SCREE TEST
+scree(df_208_subset)
+
+```
+
+### Parallel Test
+
+```{r}
+# PARALLEL TEST
+fa.parallel(df_208_subset, fa = "fa")
+
+```
+
+## Factor Presentation
+
+### Factor Extraction
+
+```{r}
+fa_unrotated <- fa(r = df_208_subset, nfactors = 5, rotate = "none")
+print(fa_unrotated$loadings)
+
+```
+
+### Factor Rotation
+
+```{r}
+fa_varimax <- fa(r = df_208_subset, nfactors = 5, rotate = "varimax")
+print(fa_varimax$loadings, sort = TRUE, cutoff = 0.4)
+
+```
+
+# PLS-SEM
