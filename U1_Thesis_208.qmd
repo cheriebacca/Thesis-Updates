@@ -1147,7 +1147,7 @@ print(fa_unrotated$loadings)
 ### Factor Rotation
 
 ```{r}
-fa_varimax <- fa(r = df_208_subset, nfactors = 5, rotate = "varimax")
+fa_varimax <- fa(r = df_208_subset, nfactors = 8, rotate = "varimax", fm = "ml")
 print(fa_varimax$loadings, sort = TRUE, cutoff = 0.4)
 
 ```
