@@ -45,8 +45,8 @@ To analyze the factors influencing the adoption of cryptocurrency among students
 # Conceptual Framework
 
 ```{r}
-library(jpeg)
-img <- readJPEG("Thesis_CF_RAGHHHH.jpeg")
+library(png)
+img <- readPNG("Thesis_CF_FinalDaw.png")
 plot(0:1, 0:1, type = "n", ann = FALSE, axes = FALSE)
 rasterImage(img, 0, 0, 1, 1)
 
@@ -1675,5 +1675,9 @@ boot_pls_model_summary <- summary(boot_pls_model, alpha = 0.10)
   
 
 plot(boot_pls_model$measurement_model)
+
+DT::datatable(boot_pls_model_summary$bootstrapped_loadings %>% round(3))
+
+DT::datatable(pls_model_summary$reliability %>% round(3))
 
 ```
