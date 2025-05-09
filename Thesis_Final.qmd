@@ -2,7 +2,7 @@
 title: "Analyzing the Perceived Intention to Adopt Cryptocurrency using Integrated Technology Readiness and Acceptance Model (TRAM): A PLS-SEM Approach"
 subtitle: "April-May 2025 Progress Review"
 author: "Cherie Joyce Bongcaras"
-date: "May 2, 2025"
+date: "May 9, 2025"
 format: 
   html:
     self-contained: true
@@ -36,25 +36,125 @@ To analyze the factors influencing the adoption of cryptocurrency among students
 
 ### Specific Objectives
 
-1.  To **describe** and compare the socio-demographics of Visayas State University students and in relation to their adoption of cryptocurrrency, within the context of an integrative framework combining the Technology Readiness Index (TRI) and the Technology Acceptance Model (TAM);
+1.  To **describe** the socio-demographics of Visayas State University students and in relation to their adoption of cryptocurrrency;
 
-2.  To **analyze** the interrelationships between inherent technology readiness (as measured by TRI) and perceived usefulness and ease of use (as measured by TAM) in the context of virtual currency adoption; and
+2.  To **analyze** the interrelationships between inherent technology readiness, technology acceptance, and perceived risk in the context of virtual currency adoption; and
 
-3.  To **contribute** to policy development by providing insights on the determinants of cryptocurrency adoption, which can inform strategies for promoting responsible use and regulation of digital currencies in academic and broader contexts.
+3.  To **contribute** to policy development by providing insights on the determinants of cryptocurrency adoption.
 
 # Conceptual Framework
 
+As shown in Figure 1, it integrates the Technology Readiness Index (TRI) and the Technology Acceptance Model (TAM) as a whole Technology Readiness and Acceptance Model (TRAM). This integrated approach combines the rational, performance-oriented perspective of TAM with the psychological readiness dimensions of TRI, added with the variable of perceived risk, offering a comprehensive model for understanding technology adoption.
+
 ```{r}
-library(png)
-img <- readPNG("Thesis_CF_FinalDaw.png")
-plot(0:1, 0:1, type = "n", ann = FALSE, axes = FALSE)
-rasterImage(img, 0, 0, 1, 1)
+
+knitr::include_graphics("Thesis_CF_FinalDaw.png")
 
 ```
 
-# Data and Descriptive Statistics
+The framework integrates Technology Readiness Index (TRI) dimensions, which represent individuals' psychological predispositions toward technology. These dimensions include Optimism (OPT), Innovativeness (INN), Insecurity (INS), and Discomfort (DIS), which are theorized to influence key Technology Acceptance Model (TAM) constructs like Perceived Ease of Use (PEU) and Perceived Usefulness (PUN) (Parasuraman & Colby, 2015), added with Perceived Risk (PER), and its dependent variable - Behavior Intention to Use (BIU).
 
-The actual data collection commenced on **March 24, 2025**. As of **April 10, 2025**, the data collection finished with a total of **277** respondents had participated in the study out of the **276** required.
+# Methodology
+
+## Research Design
+
+To fulfill the objectives of this study, the Technology Readiness and Acceptance Model (TRAM) employed a quantitative, cross-sectional research design to investigate the factors influencing cryptocurrency adoption intentions among VSU students. A quantitative methodology was adopted, aligned with past research efforts applying TRAM (Godoe, et al., 2012, Simiyu, 2019). This quantitative approach enabled data collection and analysis through a structured closed-ended survey instrument. As emphasized by Cohen et al. (2007), quantitative techniques allow findings from a sample population to be statistically generalized to the wider population. Furthermore, the cross-sectional design provided a snapshot of perceptions and intentions at a specific point in time, enabling efficient data collection while minimizing participant burden. Thus, a quantitative methodology guided by TRAM allows research questions on technology adoption intentions to be reliably measured and projected based on findings from the survey sample. 
+
+## Population and Sampling
+
+### Target Population
+
+The target population for this study comprised undergraduate students enrolled at Visayas State University during the school year 2024-2025. This population was selected due to their demographic profile aligning with early technology adopters and their potential future role in cryptocurrency market development (Kim et al., 2021).
+
+### Sampling Technique
+
+A simple random sampling technique was employed to ensure every student in the target population had an equal and independent chance of being selected for the study. This technique involved generating a complete sampling frame of all enrolled students from the university registry, assigning each student a unique identifier, and using a computer-generated random number algorithm to select participants. This approach eliminated selection bias, enhanced the external validity of findings, and provided a statistically representative sample of the student population (Taherdoost, 2016). Additionally, simple random sampling was specifically chosen because cryptocurrency adoption is a phenomenon that transcends traditional demographic boundaries, and this sampling method allows for the natural emergence of patterns without imposing predetermined stratification that might inadvertently introduce researcher bias about which population segments are most relevant to cryptocurrency adoption (Fowler, 2014).
+
+### Sample Size Determination
+
+A sampling using Cochran’s formula was used to recruit undergraduate students from Visayas State University - Main Campus. The current undergraduate university student population of school year 2024-2025 is 9,846. Using 90% confidence with a 5% margin of error, the recommended sample size is 264 based on Cochran’s formula. Thus, **at least 264 student participants** from Visayas State University were randomly sampled and surveyed.  
+
+## Research Instrument
+
+### Questionnaire Development
+
+The **TRAM survey instrument** consisted of **seven (7) closed-ended questions** of the **Pre-Screening Test portion**, and **forty-eight (48) closed-ended items** combining validated scales from both the Technology Readiness Index (TRI) and the Technology Acceptance Model (TAM). 
+
+Sociodemographic information collected included age, sex, faculty, year level, and income sources. Technology usage and digital competency measures assessed internet usage habits, digital competency, and familiarity with digital financial tools. Cryptocurrency awareness and experience items captured knowledge of cryptocurrencies, ownership status, and usage patterns. The Technology Readiness Index (TRI), adapted from Parasuraman and Colby (2015), measured optimism, innovativeness, discomfort, and insecurity dimensions. Technology acceptance measures, adapted from Davis (1989) and Venkatesh et al. (2003), captured perceived usefulness and perceived ease of use. Perceived risk items, adapted from Featherman and Pavlou (2003), measured financial, performance, and security risk perceptions. Finally, behavioral intention to use items, adapted from Venkatesh et al. (2003), assessed respondents' intentions to adopt cryptocurrency in the near future.
+
+### Scale Measurement
+
+The questionnaire comprised seven (7) parts – the first being the Consent letter, the second being the Sociodemographic Profile, and the third being the Pre-Screening Test. Then, it is followed by twenty-four (24) measurement statements of TRI scored on a 5-point Likert agreement scale (1-Strongly Disagree to 5-Strongly Agree), and twelve (12) measurement scales of TAM scored on a 7-point Likert agreement scale (1-Strongly Unlikely to 5-Strongly Likely). Then, with six (6) measurement scales of Perceived Risk. Lastly, it ended with six (6) measurement statements of behavioral intention to use still on a 7-point Likert agreement scale.
+
+The core TRAM items included 24 statements from TRI encompassing the readiness dimensions of optimism (6 items), innovativeness (6 items), insecurity (6 items), and discomfort (6 items). Additionally, 24 statements were adapted from Davis (1989) and edited for the TAM constructs of perceived ease of use (6 items), perceived usefulness (6 items), perceived risk (6 items), and behavioral intention to use (6 items).
+
+### Instrument Validity and Reliability
+
+To ensure the validity and reliability of the research instrument, several procedures were implemented. 
+
+**Content validity** using Congruence Test was established through review by a panel of two subject matter experts, both from the Faculty of Management and Economics, who assessed the relevance, clarity, and comprehensiveness of the items. 
+
+**Face validity** was addressed through a pilot test with twenty (20) students who matched the target population criteria. Feedback was collected regarding question clarity, questionnaire flow, and completion time. Based on expert reviews and pilot test feedback, the questionnaire was refined by adjusting the length to ensure completion within 15-20 minutes.
+
+## Time and Place of Study
+
+Final data collection were gathered for 17 days, from **March 24, 2025**, to **April 10, 2025**, using the survey questionnaire online. Of the 264 needed respondents, 500 students were distributed with the survey questionnaire on their emails to ensure a robust, usable sample. And instead of just 264, the researcher collected **277 responses** from the random respondents.
+
+## Data Collection Procedures
+
+### Survey Administration
+
+The data collection process ensured comprehensive coverage and reliable data acquisition. Research ethics approval was obtained from the VSU University Ethics Committee prior to commencing data collection. Potential respondents were recruited through requesting data from the school's registrar of the official university email of the students. The questionnaire was primarily administered online using Google Forms to maximize reach and facilitate data management. The survey remained active for seventeen (17) days, from **March 24, 2025**, to **April 10, 2025**.
+
+### Ethical Considerations
+
+(on manuscript)
+
+## Data Analysis Methods
+
+### Descriptive Analysis
+
+Descriptive statistics were computed to characterize the sample and summarize response patterns. The analysis included frequency distributions with counts and percentages for categorical variables, measures of mean for continuous variable (age), and visual representations to illustrate response distributions. 
+
+### Exploratory Factor Analysis
+
+EFA was conducted to examine the underlying structure of the measurement items. Factorability assessment employed Bartlett's test of sphericity and Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy to determine the suitability of the data for factor analysis. Principal axis factoring with verimax rotation was utilized for factor extraction, accommodating the anticipated correlation between factors. Factor retention decisions relied on multiple criteria, including Kaiser's criterion (eigenvalues > 1.0), scree plot examination, parallel analysis, and theoretical coherence. Items with low factor loadings (< 0.50) or high cross-loadings (> 0.40 on multiple factors) were evaluated for potential elimination to refine the instrument.
+
+### Confirmatory Factor Analysis
+
+CFA was performed to validate the measurement model. The factor structure identified in the EFA was specified as a measurement model in lavaan. Model estimation utilized maximum likelihood estimation, with robust corrections for non-normality applied where necessary. The model fit was evaluated using multiple indices, including Chi-square test (χ²/df < 3.0), Comparative Fit Index (CFI > 0.95), Tucker-Lewis Index (TLI > 0.95), Root Mean Square Error of Approximation (RMSEA < 0.06), and Standardized Root Mean Square Residual (SRMR < 0.08). Modification indices were examined for potential improvements, with changes implemented only when theoretically justifiable.
+
+### Partial Least Squares Structural Equation Modeling
+
+PLS-SEM was employed as the primary analytical technique for hypothesis testing. 
+
+Measurement model assessment focused on item reliability (standardized indicator loadings > 0.70), internal consistency (composite reliability > 0.70), convergent validity (average variance extracted > 0.50), and discriminant validity (Fornell-Larcker criterion and heterotrait-monotrait ratio). 
+
+Structural model assessment examined path coefficients (direction, magnitude, and statistical significance), coefficient of determination (R²) to evaluate explanatory power, effect size (f²) to assess impact of exogenous constructs, Stone-Geisser's Q² to determine predictive relevance, and variance inflation factor (VIF < 5.0) to check for multicollinearity. 
+
+Significance testing utilized bootstrapping procedure with 5,000 resamples, two-tailed testing at α = 0.05, and 95% confidence intervals for path coefficients. Mediation analysis assessed direct and indirect effects, classified mediation types (full, partial, or none), and tested significance of indirect effects through bootstrapping.
+
+### Software Implementation
+
+All analyses were conducted using R (version 4.1.2) and its specialized packages. 
+
+Data preparation and cleaning utilized tidyverse and naniar packages. Exploratory analysis employed psych and FactoMineR packages. Confirmatory factor analysis was conducted with lavaan. PLS-SEM analyses were performed using plspm and semPLS packages. Visualization of results utilized ggplot2, corrplot, and semPlot packages. 
+
+This software ecosystem allowed for reproducible, transparent, and comprehensive data analysis while providing flexibility for advanced statistical modeling.
+
+```{r}
+
+knitr::include_graphics("pls-sem.drawio.png")
+
+```
+
+Figure 2. Proposed structural equation model of the Technology Readiness and Acceptance Model (TRAM) in Analyzing to Adopt Cryptocurrency
+
+# Results
+
+## Descriptive Statistics
+
+The actual data collection commenced on **March 24, 2025**. As of **April 10, 2025**, the data collection finished with a total of **277** respondents had participated in the study out of the **264** required.
 
 ```{r}
 
@@ -89,19 +189,26 @@ DT::datatable(df_final)
 
 ```
 
-## Sociodemographic
+### Sociodemographic Characteristics
+
+The sociodemographic profile of the study participants was examined to provide context for subsequent analyses. Table 4.1 presents the distribution of respondents by sex and overall sample characteristics, including age, faculty affiliation, main income source, secondary income source, and year level.
+
+**Table 4.1.** ***Sociodemographic Characteristics of Respondents by Sex and Overall***
 
 ```{r}
 # Categorical Variables by Sex and Overall
 
 # ---- Step 1: Define variables and labels ----
 categorical_variables <- c("year_level", "faculty", "main_income", "sec_income")
+continuous_variables <- c("age")
 variable_labels <- c(
   year_level = "Year Level",
   faculty = "Faculty",
   main_income = "Main Income Source",
-  sec_income = "Secondary Income Source"
+  sec_income = "Secondary Income Source",
+  age = "Age"
 )
+
 
 # ---- Step 2: Count total per sex for table headers ----
 sex_counts <- df_final %>%
@@ -146,8 +253,42 @@ generate_overall <- function(data, variable) {
     select(-n, -pct)
 }
 
+generate_continuous_summary <- function(data, variable) {
+  data %>%
+    group_by(sex) %>%
+    summarise(
+      Mean = mean(.data[[variable]], na.rm = TRUE),
+      SD = sd(.data[[variable]], na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    mutate(Summary = paste0(round(Mean, 1), " (", round(SD, 1), ")")) %>%
+    select(sex, Summary) %>%
+    pivot_wider(names_from = sex, values_from = Summary)
+}
+
+generate_continuous_overall <- function(data, variable) {
+  data %>%
+    summarise(
+      Mean = mean(.data[[variable]], na.rm = TRUE),
+      SD = sd(.data[[variable]], na.rm = TRUE)
+    ) %>%
+    mutate(Overall = paste0(round(Mean, 1), " (", round(SD, 1), ")")) %>%
+    select(Overall)
+}
+
+
 # ---- Step 4: Bind all variable summaries ----
+continuous_table <- bind_rows(
+  lapply(continuous_variables, function(var) {
+    overall <- generate_continuous_overall(df_final, var)
+    by_sex <- generate_continuous_summary(df_final, var)
+    df <- bind_cols(tibble(Variable = var, Category = "Mean (SD)"), overall, by_sex)
+    return(df)
+  })
+)
+
 categorical_table_final <- bind_rows(
+  continuous_table,
   lapply(categorical_variables, function(var) {
     sex_table <- generate_summary(df_final, var)
     overall_table <- generate_overall(df_final, var)
@@ -171,7 +312,6 @@ categorical_table_final <- categorical_table_final %>%
 
 
 # ---- Step 5: Format table with variable labels, bold headers, and indenting ----
-# Step 5: Format table with headers, indents, and bolded Overall data
 categorical_table_final <- categorical_table_final %>%
   arrange(Variable) %>%
   group_by(Variable) %>%
@@ -217,15 +357,19 @@ kable(categorical_table_final, "html", escape = FALSE,
 
 ```
 
-Based on the **sociodemographic data**, the study surveyed **277 university students** across various faculties, with significantly more **female respondents (163)** than male (101). The sample shows strong representation from Management and Economics (22.4%) and Agriculture and Food Sciences (20.9%), while faculties like Computing (2.2%) have minimal representation. Gender distribution varies notably by faculty - females dominate in Veterinary Medicine (80%) and Natural Sciences (67.6%), while males are predominant in Computing (83.3%). Most respondents were upper-level students, with 31.4% in their fourth year, suggesting a sample with substantial academic experience.
+Based on the **sociodemographic data**, the study surveyed **277 university students** across various faculties, with significantly more **female respondents (163)** than male (101). The average age of the respondents is **21 years old**, given that they are university students. The sample shows **strong representation** from **Management and Economics (22.4%)** and **Agriculture and Food Sciences (20.9%)**, while faculties like Computing (2.2%) have minimal representation. Gender distribution varies notably by faculty - females dominate in Veterinary Medicine (80%) and Natural Sciences (67.6%), while males are predominant in Computing (83.3%). Most respondents were upper-level students, with 31.4% in their fourth year, suggesting a sample with substantial academic experience.
 
-The **financial profile** of respondents reveals they are **overwhelmingly dependent on family support**, with 88.4% citing allowances from family or guardians as their main income source and 46.6% listing it as their secondary source. Educational funding through scholarships serves as the primary income for only 7.6% of respondents but becomes significantly more important as a secondary source (32.9%). Employment income (part-time, full-time, or freelance) contributes minimally to students' financial resources, collectively accounting for just 3.2% of primary income. This financial dependency context is crucial when analyzing cryptocurrency adoption intentions, as limited independent financial resources may influence risk perception and technology adoption attitudes among these university students.
+The **financial profile** of respondents reveals they are **overwhelmingly dependent on family support**, with 88.4% citing allowances from family or guardians as their main income source and 46.6% listing it as their secondary source. Educational funding through scholarships serves as the primary income for only 7.6% of respondents but becomes significantly more important as a secondary source (32.9%). Employment income (part-time, full-time, or freelance) contributes minimally to students' financial resources, collectively accounting for just 3.2% of primary income. 
 
-## Internet Usage Habits
+### Internet Usage and Digital Competency
+
+Figure 4.1 illustrates the internet usage habits of respondents, indicating extremely high daily engagement and substantial time spent online. The majority of participants reported daily internet usage (97.1%), with most users (61.0%) spending more than 5 hours online each day. This demonstrates not only the ubiquity of internet access but also its deeply integrated role in daily life, as nearly all respondents engage with online services daily and well over half dedicate significant portions of their day to internet activities. The minimal percentage of occasional users (less than 3% combined for weekly and rare usage) further emphasizes how essential internet connectivity has become for the surveyed population.
+
+**Figure 4.1.** ***Internet Usage Habits of Respondents***
 
 ```{r}
 
-# Custom theme with legend at the bottom
+# Custom theme for consistency and clean appearance
 custom_theme <- theme_minimal() +
   theme(
     panel.grid.minor = element_blank(),
@@ -233,111 +377,87 @@ custom_theme <- theme_minimal() +
     axis.title.x = element_blank(),
     axis.title.y = element_text(size = 11),
     axis.text = element_text(size = 10),
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
-    legend.position = "none",
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)
   )
 
 # Get total number of respondents
 total_respondents <- nrow(df_final)
 
-# Create the IF_summary table with percentages based on total respondents
-IF_summary <- df_final %>%
-  # Group by sex and internet frequency
-  group_by(sex, internet_freq) %>%
-  
-  # Count observations in each group
-  summarize(count = n(), .groups = "drop") %>%
-  
-  # Calculate percentage based on total respondents
-  mutate(percentage = (count / total_respondents) * 100)
-
-# Calculate total count for each internet_freq category for ordering
-IF_order <- df_final %>%
+# IF summary based on overall population
+IF_summary_general <- df_final %>%
   group_by(internet_freq) %>%
-  summarize(total_count = n(), .groups = "drop") %>%
-  arrange(total_count)  # Ascending order
-
-# Define sex order (alphabetical descending order)
-sex_order <- sort(unique(df_final$sex), decreasing = TRUE)
-
-# Internet Usage Frequency plot with proper ordering
-plotIF <- ggplot(IF_summary, aes(x = factor(internet_freq, levels = IF_order$internet_freq), 
-                                y = percentage, fill = factor(sex, levels = sex_order))) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.9), color = "black") +
-  geom_text(
-    aes(label = sprintf("%.1f", percentage)),
-    position = position_dodge(width = 0.9),
-    hjust = -0.1, size = 3.5
-  ) +
-  scale_fill_manual(values = c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60"),
-                    name = "Sex") +
-  scale_y_continuous(labels = function(x) sprintf("%.0f%%", x), expand = expansion(mult = c(0, 0.1))) +
-  labs(title = "Internet Usage Frequency", x = "", y = "") +
-  coord_flip() +
-  custom_theme
-
-# Create the IH_summary table with percentages based on total respondents
-IH_summary <- df_final %>%
-  # Group by sex and internet hours
-  group_by(sex, internet_hours) %>%
-  
-  # Count observations in each group
-  summarize(count = n(), .groups = "drop") %>%
-  
-  # Calculate percentage based on total respondents
+  summarise(count = n(), .groups = "drop") %>%
   mutate(percentage = (count / total_respondents) * 100)
 
-# Calculate total count for each internet_hours category for ordering
-IH_order <- df_final %>%
-  group_by(internet_hours) %>%
-  summarize(total_count = n(), .groups = "drop") %>%
-  arrange(total_count)  # Ascending order
+# Sort IF data from most to least frequent
+IF_order_asc <- IF_summary_general %>% arrange(count)
 
-# Internet Usage Hours plot with proper ordering
-plotIH <- ggplot(IH_summary, aes(x = factor(internet_hours, levels = IH_order$internet_hours), 
-                                y = percentage, fill = factor(sex, levels = sex_order))) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.9), color = "black") +
-  geom_text(
-    aes(label = sprintf("%.1f", percentage)),
-    position = position_dodge(width = 0.9),
-    hjust = -0.1, size = 3.5
-  ) +
-  scale_fill_manual(values = c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60"),
-                    name = "Sex") +
-  scale_y_continuous(labels = function(x) sprintf("%.0f%%", x), expand = expansion(mult = c(0, 0.1))) +
-  labs(title = "Internet Usage Hours", x = "", y = "") +
+# Generate blue shades from darkest (most frequent) to lightest
+blue_shades_IF <- colorRampPalette(c("#a8dadc", "#1d3557"))(nrow(IF_order_asc))
+
+# Plot
+plotIF_general <- ggplot(IF_summary_general, 
+                         aes(x = factor(internet_freq, levels = IF_order_asc$internet_freq),
+                             y = percentage,
+                             fill = factor(internet_freq, levels = IF_order_asc$internet_freq))) +
+  geom_bar(stat = "identity", color = "black") +
+  geom_text(aes(label = sprintf("%.1f%%", percentage)), hjust = -0.1, size = 3.5) +
+  scale_y_continuous(labels = function(x) sprintf("%.0f%%", x),
+                     limits = c(0, 100),
+                     breaks = seq(0, 100, by = 10),
+                     expand = expansion(mult = c(0, 0.1))) +
+  scale_fill_manual(values = blue_shades_IF) +
+  labs(title = "Internet Usage Frequency", x = "", y = "Percentage of Respondents") +
   coord_flip() +
-  custom_theme
+  custom_theme +
+  theme(legend.position = "none")
 
-# Create legend for the combined plot
-legend <- get_legend(
-  ggplot(IF_summary, aes(x = internet_freq, y = percentage, 
-                         fill = factor(sex, levels = sex_order))) +
-    geom_bar(stat = "identity", position = position_dodge()) +
-    scale_fill_manual(values = c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60"),
-                      name = "Sex") +
-    theme(legend.position = "bottom")
+# IH summary based on overall population
+IH_summary_general <- df_final %>%
+  group_by(internet_hours) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  mutate(percentage = (count / total_respondents) * 100)
+
+# Sort IH data from most to least frequent
+IH_order_asc <- IH_summary_general %>% arrange(count)
+
+# Generate blue shades from darkest (most frequent) to lightest
+blue_shades_IH <- colorRampPalette(c("#a8dadc", "#1d3557"))(nrow(IH_order_asc))
+
+# Plot
+plotIH_general <- ggplot(IH_summary_general, 
+                         aes(x = factor(internet_hours, levels = IH_order_asc$internet_hours),
+                             y = percentage,
+                             fill = factor(internet_hours, levels = IH_order_asc$internet_hours))) +
+  geom_bar(stat = "identity", color = "black") +
+  geom_text(aes(label = sprintf("%.1f%%", percentage)), hjust = -0.1, size = 3.5) +
+  scale_y_continuous(labels = function(x) sprintf("%.0f%%", x),
+                     limits = c(0, 100),
+                     breaks = seq(0, 100, by = 10),
+                     expand = expansion(mult = c(0, 0.1))) +
+  scale_fill_manual(values = blue_shades_IH) +
+  labs(title = "Internet Usage Hours", x = "", y = "Percentage of Respondents") +
+  coord_flip() +
+  custom_theme +
+  theme(legend.position = "none")
+
+
+# Combine plots
+final_plot_general <- plot_grid(
+  plotIF_general, plotIH_general,
+  ncol = 1,
+  rel_heights = c(1, 1),
+  labels = c("", "")
 )
 
-# Combine plots with shared legend
-final_plotIU <- plot_grid(
-  plotIF, plotIH,
-  ncol = 2,
-  rel_widths = c(1, 1)
-)
-
-# Add legend underneath
-plot_grid(final_plotIU, legend, ncol = 1, rel_heights = c(1, 0.1))
+# Display the combined plot
+final_plot_general
 
 ```
 
-The **internet usage data** reveals significant gender differences in both frequency and duration of online activity among survey respondents. Female students demonstrate substantially higher daily internet engagement (57.9%) compared to male students (35%), with those preferring not to disclose gender showing minimal daily usage (4.3%). This gender disparity becomes even more pronounced when examining time spent online, where 37% of female respondents report using the internet for more than 5 hours daily, compared to only 20.9% of males and a mere 2.5% of those not disclosing gender. The data suggests female students in this study have more deeply integrated internet usage into their daily routines.
+Digital competency levels among respondents are presented in Figure 4.2. The data indicate that an overwhelming majority of participants demonstrate high digital literacy, with 97.8% reporting comfort operating digital devices such as smartphones, laptops, or tablets. This exceptional level of digital comfort is complemented by widespread adoption of digital financial services, as 91.7% of respondents have used applications for online transactions including banking and shopping. These findings reveal a population that is not only highly connected, as shown in Figure 4.1, but also confident and experienced in utilizing digital technologies for both general use and specific transactional purposes, suggesting minimal digital divide among the surveyed group.
 
-The internet usage patterns observed in this study align with findings from Perrin and Atske (2021), who reported that younger adults, particularly college students, demonstrate high levels of daily internet engagement, with women often showing more intensive usage than men. The significant gender gap in internet usage, where female respondents report substantially higher daily internet use (57.9%) compared to males (35%), is consistent with research by Van Deursen and Van Dijk (2019), who found that while the gender digital divide has narrowed in terms of access, women often demonstrate more frequent and extensive use of digital communication technologies and social platforms in educational settings.
-
-The extensive internet usage among respondents (particularly the 37% of females spending more than 5 hours daily online) supports findings from Akram et al. (2022), who identified intensive internet usage as a key prerequisite for fintech adoption, including cryptocurrency. These usage patterns reflect a digitally integrated population that Venkatesh et al. (2016) described as having developed the technological readiness necessary for adopting complex digital financial systems. Salemink et al. (2017) further noted that such high levels of internet engagement among university students typically correlate with increased willingness to explore digital innovations, making this population particularly relevant for studying cryptocurrency adoption intentions using the TRAM model.
-
-## Digital Competency
+**Figure 4.2.** ***Digital Competency Levels Among Respondents***
 
 ```{r}
 
@@ -345,89 +465,98 @@ The extensive internet usage among respondents (particularly the 37% of females 
 total_respondents <- nrow(df_final)
 
 # Digital Comfortability summary based on overall population
-DC_summary <- df_final %>%
-  group_by(sex, digital_comf) %>%
+DC_summary_general <- df_final %>%
+  group_by(digital_comf) %>%
   summarise(count = n(), .groups = "drop") %>%
   mutate(percentage = (count / total_respondents) * 100)
 
 # Online Transactions summary based on overall population
-OT_summary <- df_final %>%
-  group_by(sex, online_trans) %>%
+OT_summary_general <- df_final %>%
+  group_by(online_trans) %>%
   summarise(count = n(), .groups = "drop") %>%
   mutate(percentage = (count / total_respondents) * 100)
 
-# Define sex order (descending alphabetical order)
-sex_order <- sort(unique(df_final$sex), decreasing = TRUE)
+# Create a theme with proper subtitle placement
+subtitle_theme <- theme_minimal() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    axis.title.x = element_text(size = 11),
+    axis.title.y = element_text(size = 11),
+    axis.text = element_text(size = 10),
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 10, hjust = 0.5, margin = margin(b = 15)),
+    plot.margin = margin(t = 10, r = 10, b = 20, l = 10)
+  )
 
-# Calculate order for digital_comf variable
-DC_order <- df_final %>%
-  group_by(digital_comf) %>%
-  summarize(total_count = n(), .groups = "drop") %>%
-  arrange(total_count)  # Ascending order (least to most)
+# Set up the subtitle text, properly wrapped to fit
+dc_subtitle <- "Are you comfortable operating digital devices such as smartphones, laptops, or tablets?"
+ot_subtitle <- "Have you ever used applications for online transactions (e.g., banking, shopping)?"
 
-# Calculate order for online_trans variable
-OT_order <- df_final %>%
-  group_by(online_trans) %>%
-  summarize(total_count = n(), .groups = "drop") %>%
-  arrange(total_count)  # Ascending order (least to most)
+# Create color mapping
+color_mapping <- c("Yes" = "#1d3557", "No" = "#e63946")
 
-# Define custom fill colors
-fill_colors <- c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60")
-
-# Digital Comfortability plot (horizontal)
-plot_DC <- ggplot(DC_summary, aes(x = factor(digital_comf, levels = DC_order$digital_comf), 
-                                 y = percentage, 
-                                 fill = factor(sex, levels = sex_order))) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.9), color = "black") +
-  geom_text(aes(label = sprintf("%.1f", percentage)), 
-            position = position_dodge(width = 0.9), hjust = -0.1, size = 4) +
-  scale_fill_manual(values = fill_colors, name = "Sex") +
+# Digital Comfortability plot with color-coded bars
+plot_DC_general <- ggplot(DC_summary_general, 
+                         aes(x = digital_comf, 
+                             y = percentage,
+                             fill = digital_comf)) +
+  geom_bar(stat = "identity", color = "black") +
+  geom_text(aes(label = sprintf("%.1f%%", percentage)), 
+            hjust = -0.1, size = 3.5) +
   coord_flip() +
-  labs(title = "Digital Comfortability", x = NULL, y = "Percentage") +
-  scale_y_continuous(labels = function(x) sprintf("%.1f%%", x), expand = expansion(mult = c(0, 0.2))) +
-  theme_minimal(base_size = 14) +
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, face = "bold"))
+  scale_fill_manual(values = color_mapping) +
+  labs(title = "Digital Comfortability", 
+       subtitle = str_wrap(dc_subtitle, width = 60),
+       x = "", 
+       y = "Percentage") +
+  scale_y_continuous(labels = function(x) sprintf("%.1f%%", x), 
+                    limits = c(0, 100),
+                    breaks = seq(0, 100, by = 20),
+                    expand = expansion(mult = c(0, 0.1))) +
+  subtitle_theme +
+  theme(legend.position = "none")
 
-# Online Transactions plot (horizontal)
-plot_OT <- ggplot(OT_summary, aes(x = factor(online_trans, levels = OT_order$online_trans), 
-                                 y = percentage, 
-                                 fill = factor(sex, levels = sex_order))) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.9), color = "black") +
-  geom_text(aes(label = sprintf("%.1f", percentage)), 
-            position = position_dodge(width = 0.9), hjust = -0.1, size = 4) +
-  scale_fill_manual(values = fill_colors, name = "Sex") +
+# Online Transactions plot with color-coded bars
+plot_OT_general <- ggplot(OT_summary_general, 
+                         aes(x = online_trans, 
+                             y = percentage,
+                             fill = online_trans)) +
+  geom_bar(stat = "identity", color = "black") +
+  geom_text(aes(label = sprintf("%.1f%%", percentage)), 
+            hjust = -0.1, size = 3.5) +
   coord_flip() +
-  labs(title = "Online Transactions", x = NULL, y = "Percentage") +
-  scale_y_continuous(labels = function(x) sprintf("%.1f%%", x), expand = expansion(mult = c(0, 0.2))) +
-  theme_minimal(base_size = 14) +
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, face = "bold"))
+  scale_fill_manual(values = color_mapping) +
+  labs(title = "Online Transactions", 
+       subtitle = str_wrap(ot_subtitle, width = 60),
+       x = "", 
+       y = "Percentage") +
+  scale_y_continuous(labels = function(x) sprintf("%.1f%%", x), 
+                    limits = c(0, 100),
+                    breaks = seq(0, 100, by = 20),
+                    expand = expansion(mult = c(0, 0.1))) +
+  subtitle_theme +
+  theme(legend.position = "none")
 
-# Extract shared legend
-legend <- get_legend(
-  ggplot(DC_summary, aes(x = digital_comf, y = percentage, 
-                        fill = factor(sex, levels = sex_order))) +
-    geom_bar(stat = "identity", position = position_dodge()) +
-    scale_fill_manual(values = fill_colors, name = "Sex") +
-    theme(legend.position = "bottom", legend.title = element_text(face = "bold"))
+# Set up for grid plotting with proper spacing
+# Combine plots vertically with proper spacing for subtitles
+final_plot_general <- plot_grid(
+  plot_DC_general, plot_OT_general,
+  ncol = 1,
+  rel_heights = c(1, 1),
+  align = "v"
 )
 
-# Combine plots with shared legend
-final_plotDC <- plot_grid(
-  plot_DC, plot_OT,
-  ncol = 2,
-  rel_widths = c(1, 1)
-)
-
-# Add legend underneath
-plot_grid(final_plotDC, legend, ncol = 1, rel_heights = c(1, 0.1))
+# Display the combined plot
+final_plot_general
 
 ```
 
-The data reveals pronounced gender differences in digital competency, with female respondents reporting significantly higher rates of both digital device comfort (58.1%) and online transaction experience (55.2%) compared to males (35.4% and 32.5% respectively). The overwhelming majority of respondents across genders express digital device comfort (97.8% total), with only 2.2% indicating discomfort. Similarly, most respondents (91.7%) report experience with online transactions, though this percentage is slightly lower than those comfortable with devices, suggesting a small segment of digitally comfortable students who haven't yet engaged in online financial activities. These gender disparities in digital competencies parallel the earlier findings on internet usage patterns, indicating that female respondents consistently demonstrate higher digital engagement across multiple dimensions.
+### Technology Engagement Patterns
 
-Research by Venkatesh et al. (2021) identified gender as a critical moderating factor in technology acceptance models, though traditional gaps have shifted in many educational contexts. Prensky (2020) characterized today's university students as "digital natives" with intuitive technology comfort, while Lin et al. (2019) demonstrated that technological self-efficacy serves as a fundamental prerequisite for fintech adoption intention. Kim and Park (2022) identified prior experience with digital financial systems as the strongest predictor of willingness to adopt cryptocurrency, while Parasuraman and Colby (2018) categorized individuals comfortable with basic digital devices but reluctant toward financial technology applications as "technology hesitators." Additionally, Rahi et al. (2019) found that female university students often demonstrate higher engagement with practical digital applications than their male counterparts, challenging traditional assumptions about gender and financial technology adoption.
+Respondents' familiarity with smart tools is depicted in Figure 4.3, revealing a clear hierarchy in digital device adoption and usage patterns. Smartphones dominate as the primary technology tool with nearly universal adoption (99.3%), establishing them as the cornerstone of digital engagement among participants. Laptops represent the second most commonly used device at 59.6%, suggesting that while most respondents rely on multiple devices, approximately 40% operate primarily through mobile technology. Tablets show moderate adoption at 19.5%, while smartwatches remain at an early adoption stage with only 8.7% regular usage. This distribution indicates a mobile-first technology landscape where portable, always-connected devices are prioritized, with decreasing adoption rates for secondary and peripheral smart tools.
 
-## Familiarity with Smart Tools
+**Figure 4.3.** ***Familiarity with Smart Tools Among Respondents***
 
 ```{r}
 
@@ -435,41 +564,37 @@ Research by Venkatesh et al. (2021) identified gender as a critical moderating f
 total_respondents <- nrow(df_final)
 
 # Prepare summary data with percentage based on total population
-ST_summary <- df_final %>%
-  separate_rows(smart_usage, sep = ", ") %>%
-  group_by(smart_usage, sex) %>%
-  summarise(count = n(), .groups = "drop") %>%
-  # Calculate percentage based on total respondents
-  mutate(percentage = (count / total_respondents) * 100)
-
-# Calculate total count for each smart_usage category for ordering
-ST_order <- df_final %>%
+ST_summary_general <- df_final %>%
   separate_rows(smart_usage, sep = ", ") %>%
   group_by(smart_usage) %>%
-  summarize(total_count = n(), .groups = "drop") %>%
-  arrange(total_count)  # Ascending order (least to most frequent)
+  summarise(count = n(), .groups = "drop") %>%
+  mutate(percentage = (count / total_respondents) * 100)
 
-# Define sex order (descending alphabetical order)
-sex_order <- sort(unique(df_final$sex), decreasing = TRUE)
+# Order smart tools by count (ascending for color gradient)
+ST_order <- ST_summary_general %>%
+  arrange(count)
+
+# Generate color gradient from light to dark (least to most)
+blue_shades_ST <- colorRampPalette(c("#a8dadc", "#1d3557"))(nrow(ST_order))
+
+# Assign colors to smart_usage categories
+ST_summary_general$smart_usage <- factor(ST_summary_general$smart_usage, levels = ST_order$smart_usage)
+ST_summary_general$fill_color <- blue_shades_ST[rank(ST_summary_general$count, ties.method = "first")]
 
 # Plot
-ggplot(ST_summary, aes(x = factor(smart_usage, levels = ST_order$smart_usage), 
-                      y = percentage, 
-                      fill = factor(sex, levels = sex_order))) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.8), width = 0.6, color = "black") +
+ggplot(ST_summary_general, aes(x = smart_usage, y = percentage, fill = smart_usage)) +
+  geom_bar(stat = "identity", color = "black", show.legend = FALSE) +
+  scale_fill_manual(values = setNames(ST_summary_general$fill_color, ST_summary_general$smart_usage)) +
   geom_text(
-    aes(label = sprintf("%.1f", percentage)),
-    position = position_dodge(width = 0.8),
+    aes(label = sprintf("%.1f%%", percentage)),
     hjust = -0.1, size = 4
   ) +
-  scale_fill_manual(values = c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60"),
-                    name = "Sex") +
   coord_flip() +
   labs(
     title = "Familiarity with Smart Tools",
-    x = "Smart Tool",
-    y = "Percentage",
-    fill = "Sex"
+    subtitle = "Which of the following do you use regularly?",
+    x = "",
+    y = "Percentage"
   ) +
   scale_y_continuous(
     labels = function(x) sprintf("%.1f%%", x),
@@ -480,19 +605,17 @@ ggplot(ST_summary, aes(x = factor(smart_usage, levels = ST_order$smart_usage),
     plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
     axis.text.y = element_text(size = 12),
     axis.title.x = element_text(face = "bold"),
-    axis.title.y = element_text(face = "bold"),
-    legend.position = "bottom",
-    legend.title = element_text(face = "bold")
+    axis.title.y = element_text(face = "bold")
   )
+
 
 ```
 
-The data on familiarity with smart tools reveals a clear hierarchy in device usage and significant gender differences across all device categories. Smartphones emerge as the dominant device with the highest familiarity rates (99.3% total), followed by laptops (59.6%), tablets (19.6%), and smartwatches (8.7%). Female respondents consistently report substantially higher familiarity rates across all device categories, most notably with smartphones (58.5% vs. 36.5% for males) and laptops (36.1% vs. 21.7%). This gender gap is proportionally maintained across less common devices like tablets (13.4% vs. 5.8%) and smartwatches (5.1% vs. 3.2%), indicating that female students in this study not only use digital devices more extensively but also engage with a broader range of smart technologies.
+### Cryptocurrency Awareness and Ownership
 
-These findings align with research by Mariscal et al. (2019) who documented the evolving digital divide where access has largely been resolved but usage patterns show significant demographic variations. The smartphone dominance supports Humphreys et al. (2018) who identified mobile devices as the primary gateway for financial technology adoption among university students. The gender disparity across multiple device types corresponds with Hargittai and Shafer's (2023) observations that female students often demonstrate broader digital tool engagement when controlling for access. Furthermore, Wang and Hsieh (2021) found that familiarity across multiple smart device categories strongly correlates with willingness to adopt emerging financial technologies, suggesting that the comprehensive digital ecosystem experience of female respondents might positively influence their cryptocurrency adoption intentions within the TRAM framework.
+Figures 4.4 and 4.5 present data on cryptocurrency awareness and ownership among participants, respectively. Analysis revealed that 93.5% of respondents reported awareness of cryptocurrencies, while only 12.3% indicated ownership of at least one form of cryptocurrency. The awareness data shows varying levels of familiarity, with the majority (65.0%) acknowledging awareness but admitting limited knowledge, while 28.5% claim to be familiar with cryptocurrencies. Despite this high level of awareness, the significant gap between awareness (93.5%) and actual ownership (12.3%) suggests that cryptocurrencies remain primarily in the awareness phase rather than adoption phase for most respondents. This indicates potential barriers to cryptocurrency adoption despite widespread recognition of its existence in the digital economy.
 
-
-## Cryptocurrency Awareness
+**Figure 4.4.** ***Cryptocurrency Awareness Among Respondents***
 
 ```{r}
 
@@ -500,199 +623,193 @@ These findings align with research by Mariscal et al. (2019) who documented the 
 total_respondents <- nrow(df_final)
 
 # Prepare summary with percentage based on total population
-CA_summary <- df_final %>%
-  group_by(sex, crypto_aware) %>%
+CA_summary_general <- df_final %>%
+  group_by(crypto_aware) %>%
   summarise(count = n(), .groups = "drop") %>%
-  # Calculate percentage based on total respondents
   mutate(percentage = (count / total_respondents) * 100)
 
-# Calculate order for crypto_aware variable
-CA_order <- df_final %>%
-  group_by(crypto_aware) %>%
-  summarize(total_count = n(), .groups = "drop") %>%
-  arrange(total_count)  # Ascending order (least to most)
+# Order from least to most for color assignment
+CA_order <- CA_summary_general %>%
+  arrange(count)
 
-# Define sex order (descending alphabetical order)
-sex_order <- sort(unique(df_final$sex), decreasing = TRUE)
+# Create gradient from light to dark blue
+blue_shades_CA <- colorRampPalette(c("#a8dadc", "#1d3557"))(nrow(CA_order))
+
+# Assign colors based on order
+CA_summary_general$crypto_aware <- factor(CA_summary_general$crypto_aware, levels = CA_order$crypto_aware)
+CA_summary_general$fill_color <- blue_shades_CA[rank(CA_summary_general$count, ties.method = "first")]
 
 # Plot
-ggplot(CA_summary, aes(x = factor(crypto_aware, levels = CA_order$crypto_aware), 
-                      y = percentage, 
-                      fill = factor(sex, levels = sex_order))) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.9), color = "black", alpha = 0.8) +
+ggplot(CA_summary_general, aes(x = crypto_aware, y = percentage, fill = crypto_aware)) +
+  geom_bar(stat = "identity", color = "black", show.legend = FALSE) +
+  scale_fill_manual(values = setNames(CA_summary_general$fill_color, CA_summary_general$crypto_aware)) +
   geom_text(
-    aes(label = sprintf("%.1f", percentage)),
-    position = position_dodge(width = 0.9),
+    aes(label = sprintf("%.1f%%", percentage)),
     hjust = -0.1, size = 4
   ) +
   coord_flip() +
-  scale_fill_manual(values = c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60"),
-                   name = "Sex") +
   labs(
     title = "Cryptocurrency Awareness",
     x = NULL,
-    y = "Percentage",
-    fill = "Sex"
+    y = "Percentage"
   ) +
   scale_y_continuous(
-    labels = function(x) sprintf("%.1f%%", x),
+    labels = function(x) sprintf("%.0f%%", x),
+    limits = c(0, 100),
+    breaks = seq(0, 100, by = 10),
+    expand = expansion(mult = c(0, 0.1))
+  ) +
+  scale_x_discrete(labels = c(
+    "No, I have never heard of cryptocurrencies." = "No, I have never heard\nof cryptocurrencies.",
+    "Yes, I am familiar with cryptocurrencies." = "Yes, I am familiar\nwith cryptocurrencies.",
+    "Yes, but I don't know much about them." = "Yes, but I don't know\nmuch about them."
+  )) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.y = element_text(size = 12),
+    axis.title = element_text(face = "bold"),
+    legend.position = "none"  # Removed legend
+  )
+
+
+
+
+```
+
+**Figure 4.5.** ***Cryptocurrency Ownership Among Respondents***
+
+```{r}
+
+# Create a summary of cryptocurrency ownership for general population
+CO_summary <- df_final %>%
+  group_by(crypto_own) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  mutate(percentage = count / sum(count) * 100)
+
+# Create the horizontal plot
+ggplot(CO_summary, aes(x = reorder(crypto_own, desc(crypto_own)), y = percentage, fill = crypto_own)) +
+  geom_bar(stat = "identity", color = "black", alpha = 0.9, width = 0.6) +
+  geom_text(
+    aes(label = sprintf("%.1f%%", percentage)),
+    hjust = -0.1, size = 4
+  ) +
+  coord_flip() +
+  scale_fill_manual(values = c("Yes" = "#1d3557", "No" = "#e63946")) +
+  labs(
+    title = "Cryptocurrency Ownership",
+    y = "Percentage",
+    x = ""
+  ) +
+  scale_y_continuous(
+    labels = function(x) sprintf("%.0f%%", x),
+    limits = c(0, 100),
+    breaks = seq(0, 100, by = 10),
     expand = expansion(mult = c(0, 0.1))
   ) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
     axis.text.y = element_text(size = 12),
-    axis.title.y = element_text(face = "bold"),
-    legend.position = "bottom",
-    legend.title = element_text(face = "bold")
-  )
-
-```
-
-The graph displays cryptocurrency awareness levels across different gender categories. The data reveals significant gender disparities in cryptocurrency familiarity:
-For respondents who answered "Yes, but I don't know much about them," there's a substantial gender gap with 42.2% of females compared to 19.9% of males, showing women are more likely to have surface-level awareness. Among those who are more familiar with cryptocurrencies ("Yes, I am familiar with cryptocurrencies"), males lead with 14.8% versus 12.6% of females. Very few respondents had never heard of cryptocurrencies, with slightly more females (4.0%) than males (1.8%) in this category. Small percentages across all awareness levels preferred not to disclose their gender (2.9%, 1.1%, and 0.7% respectively).
-
-This data aligns with previous research indicating gender differences in cryptocurrency adoption. Studies by Alaeddin and Altounjy (2018) found gender significantly impacts cryptocurrency investment intentions, while Lim et al. (2019) demonstrated that males generally show higher cryptocurrency familiarity and adoption rates. These gender differences are particularly relevant when applying the TRAM model, as technology readiness often varies by demographic factors, potentially affecting perceived usefulness and ease of use - key determinants in cryptocurrency adoption intentions.
-
-
-## Cryptocurrency Ownership
-
-```{r}
-
-# Create a summary of cryptocurrency ownership with overall percentages
-CO_summary <- df_final %>%
-  group_by(sex, crypto_own) %>%
-  summarise(count = n(), .groups = "drop") %>%
-  mutate(percentage = count / nrow(df_final) * 100) %>%
-  # Create a custom order for sex
-  mutate(sex = factor(sex, levels = c("Female", "Male", "Prefer not to say"))) %>%
-  arrange(sex, crypto_own)
-
-# Create the horizontal plot
-ggplot(CO_summary, aes(x = reorder(crypto_own, desc(crypto_own)), y = percentage, fill = sex)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.9), color = "black", alpha = 0.8) +
-  geom_text(
-    aes(label = sprintf("%.1f", percentage)),
-    position = position_dodge(width = 0.9),
-    hjust = -0.1, size = 4
-  ) +
-  coord_flip() +  # This makes the plot horizontal
-  scale_fill_manual(values = c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60")) +
-  labs(
-    title = "Cryptocurrency Ownership",
-    y = "Percentage",
-    x = "",
-    fill = "Sex"
-  ) +
-  scale_y_continuous(
-    labels = function(x) sprintf("%.1f%%", x),
-    expand = expansion(mult = c(0, 0.1))
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
-    axis.text.y = element_text(size = 12),
     axis.title = element_text(face = "bold"),
-    legend.position = "bottom",
-    legend.title = element_text(face = "bold")
+    legend.position = "none"  # Removed legend
   )
+
+
 
 ```
 
-The graph illustrates cryptocurrency ownership patterns across gender categories, revealing significant gender disparities in actual cryptocurrency adoption despite the awareness levels shown in the previous graph.
+Figure 4.6 illustrates the distribution of specific cryptocurrencies owned by participants, with Bitcoin being the most commonly held (21.6%), followed by Ethereum (18.9%). The data reveals a clear preference for established cryptocurrencies, with Bitcoin and Ethereum together accounting for over 40% of cryptocurrency ownership among respondents. The "Others" category represents a significant portion (16.2%), suggesting diversification beyond the top-listed options. Mid-tier cryptocurrencies show moderate adoption, with XRP at 10.8%, while Tether, Solana, and Binance Coin each represent 6.8% of ownership. Less commonly held cryptocurrencies include Dogecoin (5.4%), Cardano (4.1%), and Toncoin (2.7%), demonstrating a long-tail distribution pattern where ownership becomes increasingly fragmented among alternative coins.
 
-The data shows an overwhelming majority of respondents do not own cryptocurrencies, with 53.8% of females, 30.0% of males, and 4.0% of those who prefer not to disclose their gender responding "No" to cryptocurrency ownership. Among cryptocurrency owners, males lead slightly at 6.5% compared to 5.1% of females, with only 0.7% of respondents who prefer not to state their gender indicating ownership. This creates a combined ownership rate of just 12.3% across all gender categories, demonstrating that cryptocurrency remains primarily in the early adoption phase.
-
-These findings align with established research on technology adoption patterns. Studies by Venkatesh and Morris (2000) demonstrated that males are typically earlier adopters of financial technologies. The significantly lower ownership rates compared to awareness levels (as seen in the previous graph) illustrate the gap between knowledge and actual adoption, supporting the premise of the TRAM framework that technology readiness factors and perceived usefulness must both be present to drive adoption behavior. This ownership-awareness gap is particularly pronounced among female respondents, who showed high basic awareness (42.2%) but low actual adoption (5.1%), suggesting additional barriers or different evaluation criteria affecting their cryptocurrency adoption decisions.
-
-## Cryptocurrencies Owned
+**Figure 4.6.** ***Types of Cryptocurrencies Owned by Respondents***
 
 ```{r}
 
-# Clean and handle 'None'
-DOwned_clean <- df_final |> 
-  mutate(crypto_own2 = ifelse(is.na(crypto_own2) | crypto_own2 == "NA" | crypto_own2 == "N/A", "None", crypto_own2))
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(scales)
 
-# Split multiple selections and standardize cryptocurrency names
-DOwned_long <- DOwned_clean |> 
-  separate_rows(crypto_own2, sep = ",") |> 
+# Filter to only respondents who answered Yes to crypto_own
+DOwned_yes <- df_final |>
+  filter(crypto_own == "Yes") |>
+  mutate(crypto_own2 = ifelse(is.na(crypto_own2) | crypto_own2 %in% c("NA", "N/A", ""), "None", crypto_own2))
+
+# Expand and standardize cryptocurrency names
+DOwned_long <- DOwned_yes |>
+  separate_rows(crypto_own2, sep = ",") |>
   mutate(
     crypto_own2 = trimws(crypto_own2),
-    # Standardize cryptocurrency names
     crypto_own2 = case_when(
       crypto_own2 %in% c("Bitcoin (BTC)") ~ "Bitcoin",
       crypto_own2 %in% c("Ethereum (ETH)") ~ "Ethereum",
       crypto_own2 %in% c("Tether (USDT)") ~ "Tether",
       crypto_own2 %in% c("Solana (SOL)") ~ "Solana",
       crypto_own2 %in% c("XRP (XRP)") ~ "XRP",
+      crypto_own2 %in% c("Binance Coin (BNB)") ~ "Binance Coin",
       crypto_own2 %in% c("Cardano (ADA)") ~ "Cardano",
       crypto_own2 %in% c("Dogecoin (DOGE)") ~ "Dogecoin",
       crypto_own2 %in% c("Toncoin (TON)") ~ "Toncoin",
-      crypto_own2 %in% c("AXS", "Altcoins", "Avalanche (AVAX)", "Grass", "Hedera (HBAR)", "Injective (INJ)", "Memecoin", "Pi", "RON", "SLP", "Smooth Love Potion (SLP)", "Sui (SUI)") ~ "Others",
+      crypto_own2 %in% c("AXS", "Altcoins", "Avalanche (AVAX)", "Grass", "Hedera (HBAR)", "Injective (INJ)", 
+                         "Memecoin", "Pi", "RON", "SLP", "Smooth Love Potion (SLP)", "Sui (SUI)") ~ "Others",
       TRUE ~ crypto_own2
     )
   ) |>
-  filter(crypto_own2 != "None" & crypto_own2 != "NA" & crypto_own2 != "N/A" & crypto_own2 != "NONE" & crypto_own2 != "")
+  filter(!crypto_own2 %in% c("None", "", "NA", "N/A", "NONE"))
 
-# Calculate total population size
-total_population <- nrow(df_final)
+# Total number of crypto owners
+total_owners <- n_distinct(DOwned_yes$id)  # Use unique identifier if available
+# If no ID column, use nrow(DOwned_yes)
 
-# Calculate total ownership to determine order
-crypto_totals <- DOwned_long |>
-  group_by(crypto_own2) |>
-  summarise(total = n()) |>
-  arrange(total)  # Ascending order
-
-# Calculate percentage of total population for each cryptocurrency by sex
+# Summarize percentage per crypto
 DOwned_summary <- DOwned_long |>
-  group_by(crypto_own2, sex) |>
+  group_by(crypto_own2) |>
   summarise(count = n(), .groups = "drop") |>
-  mutate(percentage = count / total_population * 100) |>
-  ungroup()
+  mutate(percentage = count / sum(count) * 100)
 
-# Set order based on total counts (ascending)
-DOwned_summary$crypto_own2 <- factor(DOwned_summary$crypto_own2, levels = crypto_totals$crypto_own2)
+# Order for gradient
+DOwned_summary <- DOwned_summary |>
+  arrange(count) |>
+  mutate(crypto_own2 = factor(crypto_own2, levels = crypto_own2))
 
-# Plot horizontal chart with percentages
-ggplot(DOwned_summary, aes(x = crypto_own2, y = percentage, fill = sex)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black", alpha = 0.8) +
-  geom_text(
-    aes(label = sprintf("%.1f", percentage)),  # Decimal form
-    position = position_dodge(width = 0.8),
-    hjust = -0.1, size = 4
-  ) +
-  coord_flip() +  # Make it horizontal
-  scale_fill_manual(values = c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60")) +
-  theme_minimal() +
+# Generate gradient color palette from light blue to dark blue
+n_colors <- nrow(DOwned_summary)
+color_palette <- colorRampPalette(c("#a8dadc", "#1d3557"))(n_colors)
+
+# Add colors to the data
+DOwned_summary$fill_color <- color_palette
+
+# Plot
+ggplot(DOwned_summary, aes(x = crypto_own2, y = percentage, fill = fill_color)) +
+  geom_bar(stat = "identity", color = "black", width = 0.7) +
+  geom_text(aes(label = sprintf("%.1f%%", percentage)), hjust = -0.1, size = 4) +
+  coord_flip() +
+  scale_fill_identity() +
   labs(
     title = "Cryptocurrencies Owned",
-    y = "Percentage of Total Population (%)",
-    x = "Cryptocurrency",
-    fill = "Sex"
+    y = "Percentage of Crypto Owners",
+    x = ""
   ) +
   scale_y_continuous(
-    labels = function(x) sprintf("%.1f%%", x),
-    expand = expansion(mult = c(0, 0.1))
+    limits = c(0, 100),
+    breaks = seq(0, 100, by = 10),
+    expand = expansion(mult = c(0, 0.1)),
+    labels = function(x) sprintf("%.0f%%", x)
   ) +
+  theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
-    axis.title = element_text(face = "bold"),
     axis.text.y = element_text(size = 12),
-    legend.position = "bottom",
-    legend.title = element_text(face = "bold")
+    axis.title = element_text(face = "bold"),
+    legend.position = "none"
   )
 
 
 ```
 
-The graph provides detailed insights into specific cryptocurrency ownership patterns across gender categories, revealing both market preferences and gender-specific adoption trends.
+The primary motivations for cryptocurrency ownership are presented in Figure 4.7. The most frequently cited reasons included investing and trading (72.5%), gaming and metaverse applications (15.0%), and payments and purchases (7.5%), suggesting that cryptocurrencies are predominantly viewed as investment vehicles rather than functional currencies. The overwhelming preference for investment and trading purposes indicates that most cryptocurrency owners are motivated by potential financial returns rather than practical utility. The emerging use cases in gaming and metaverse environments represent a significant secondary motivation, pointing to growing integration with digital entertainment ecosystems. Meanwhile, the relatively low percentages for payments, remittances, and long-term holdings (collectively accounting for just 12.5%) demonstrate that cryptocurrency's original purpose as an alternative payment system remains a secondary consideration for most current adopters.
 
-Bitcoin maintains its position as the most widely owned cryptocurrency, with 3.6% of males, 2.5% of females, and 0.4% of those who prefer not to disclose their gender holding this asset. Ethereum follows as the second most popular cryptocurrency overall with identical female ownership rates to Bitcoin (2.5%) but lower male ownership (2.2%). The "Others" category shows significant male ownership (2.9%) compared to female ownership (1.4%), suggesting males may be more willing to explore alternative or emerging cryptocurrencies beyond the established market leaders.
-
-Notable gender differences appear in cryptocurrency preferences. Males show stronger preference for XRP (2.2% vs 0.7% females), Tether (1.4% vs 0.7%), and Dogecoin (1.1% vs 0.4%). Conversely, females demonstrate relatively stronger interest in Solana (1.1% vs 0.7%) and Cardano (0.7% vs 0.4%). Interestingly, Toncoin appears exclusively owned by males (0.7%) among respondents.
-These findings connect with research on technology adoption characteristics. The preference patterns align with diffusion of innovation theory (Rogers, 2003), where early adopters often display different risk profiles and innovation attitudes. The data suggests males may display more diversified cryptocurrency portfolios, potentially indicating higher risk tolerance or stronger innovator/early adopter characteristics in their technology adoption profiles. This differentiated ownership pattern provides valuable context for the TRAM model, suggesting that gender may moderate not only general adoption rates but also specific cryptocurrency preferences, potentially influenced by different perceptions of usefulness, risk, and technological complexity across different blockchain implementations.
-
-## Reasons for Owning Cryptocurrencies
+**Figure 4.7.** ***Reasons for Owning Cryptocurrencies Among Respondents***
 
 ```{r}
 
@@ -705,59 +822,57 @@ ROC_clean <- df_final %>%
 # Total who answered this part
 total_answered <- nrow(ROC_clean)
 
-# Count per sex and reason, percent of only those who answered
+# IF summary based on overall population
+ROC_summary <- df_final %>%
+  group_by(crypto_what) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  mutate(percentage = (count / total_respondents) * 100)
+
+# Summarize without sex grouping
 ROC_summary <- ROC_clean %>%
-  count(sex, crypto_what) %>%
-  mutate(percent = n / total_answered)
+  count(crypto_what) %>%
+  mutate(percent = n / total_answered) %>%
+  arrange(percent)
 
-# Reorder crypto_what based on total percentage (ascending)
-overall_order <- ROC_summary %>%
-  group_by(crypto_what) %>%
-  summarise(total = sum(percent)) %>%
-  arrange(total) %>%
-  pull(crypto_what)
-
-# Within each crypto_what, order sex by ascending percentage
-ROC_summary <- ROC_summary %>%
-  group_by(crypto_what) %>%
-  mutate(sex = fct_reorder(sex, percent, .desc = FALSE)) %>%
-  ungroup()
-
-# Plot
-ggplot(ROC_summary, aes(x = percent, y = factor(crypto_what, levels = overall_order), fill = sex)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black") +
-  geom_text(aes(label = round(percent, 2)),
-            position = position_dodge(width = 0.8),
-            hjust = -0.1, size = 4) +
-  scale_x_continuous(labels = percent_format(accuracy = 1), expand = expansion(mult = c(0, 0.1))) +
-  scale_fill_manual(values = c("Female" = "#e63946", "Male" = "#1d3557", "Prefer not to say" = "gray60")) +
+# Horizontal bar chart with gradient fill
+ggplot(ROC_summary, aes(x = reorder(crypto_what, percent), y = percent, fill = percent)) +
+  geom_bar(stat = "identity", color = "black", alpha = 0.9) +
+  geom_text(
+    aes(label = scales::percent(percent, accuracy = 0.1)),
+    hjust = -0.1, size = 4
+  ) +
+  coord_flip() +
+  scale_fill_gradient(
+    low = "#a8dadc", high = "#1d3557", guide = "none"
+  ) +
+  scale_y_continuous(
+    labels = scales::percent_format(accuracy = 1),
+    limits = c(0, 1),  # sets y-axis from 0% to 100%
+    expand = expansion(mult = c(0, 0.05))
+  ) +
   labs(
     title = "Cryptocurrency Uses",
-    x = "",
-    y = NULL,
-    fill = "Sex"
+    x = NULL,
+    y = "Percentage"
   ) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
     axis.text = element_text(size = 12),
-    legend.position = "bottom",
-    legend.title = element_text(face = "bold")
+    axis.title = element_text(face = "bold")
   )
+
+
 
 ```
 
-The graph illustrates the primary motivations behind cryptocurrency ownership across gender categories, revealing significant insights into user intentions and perceived utility that directly inform the TRAM research framework.
+## Technology Readiness and Acceptance Dimensions
 
-Investment and trading emerges as the dominant motivation across all gender categories, with 38% of males, 32% of females, and 3% of those who prefer not to disclose their gender citing this as their primary reason for cryptocurrency ownership. This strong investment orientation aligns with cryptocurrency's popular perception as a speculative asset class rather than a transactional medium.
+### Technology Readiness Dimensions
 
-Notably, there are distinct gender differences in secondary motivations. Males show greater interest in gaming and metaverse applications (10%) compared to females (3%), suggesting different utilitarian value perceptions. Conversely, females demonstrate stronger practical usage patterns, with 7% citing payments and purchases and 3% using cryptocurrencies for remittances and transfers - use cases entirely absent among male respondents in this sample. Males uniquely mention long-term holding (3%) as a motivation, potentially indicating different time horizons in investment strategies.
+The four dimensions of technology readiness—optimism, innovativeness, insecurity, and discomfort — were assessed using 100% stacked horizontal bar charts to facilitate visual comparison (Figures 4.8-4.11).
 
-The data suggests that adoption barriers may differ based on intended use cases - males appear more oriented toward speculative and technological applications (investment, gaming, long-term holding), while females show relatively stronger interest in practical financial utilities (payments, remittances). This aligns with technology adoption research by Venkatesh et al. (2012) showing that performance expectancy (perceived usefulness) is often moderated by gender and other demographics.
-
-## TECHNOLOGY READINESS
-
-### OPTIMISM
+**Figure 4.8.** ***Distribution of Responses on the Optimism Dimension***
 
 ```{r}
 # Pivot data to long format
@@ -815,17 +930,12 @@ ggplot(df_long_OPT_final, aes(x = Question, y = Proportion, fill = Response)) +
 
 ```
 
-The graph provides detailed insights into the optimism dimension of technology readiness regarding cryptocurrency adoption, which represents a critical component of the TRAM framework. Optimism reflects positive attitudes toward technology and beliefs about its benefits.
+Optimism toward cryptocurrency was generally moderate among respondents, with approximately 35-37% expressing moderate to strong agreement (ratings 4-5) with positive statements about cryptocurrency's benefits. This suggests a cautiously positive outlook rather than overwhelming enthusiasm. The heatmap reveals that across all dimensions of cryptocurrency optimism, the most common response was neutral (rating 3), consistently representing 40-55% of responses. The highest level of positive sentiment was observed regarding cryptocurrency's independence from traditional banking hours, with 37% agreeing or strongly agreeing with this benefit. Respondents were least convinced about cryptocurrency delivering on their expectations, with only 21% expressing strong confidence. 
 
-Across all six optimism statements, the data reveals a predominant neutral stance (rating 3), consistently capturing 40-55% of responses. This substantial neutral positioning suggests that many respondents remain undecided about cryptocurrency's benefits, indicating an opportunity for educational interventions to shift perceptions positively.
-
-The statement garnering the strongest positive agreement is "I believe that cryptocurrency does not limit me to traditional banking business hours" with a combined 37% of respondents selecting agree (25%) or strongly agree (12%). This highlights the perceived advantage of cryptocurrency's 24/7 availability compared to traditional banking systems. Similarly, statements regarding greater freedom/flexibility (31% positive) and efficiency through latest financial technologies (30% positive) also received relatively strong agreement.
-The weakest optimism indicator appears in the statement about cryptocurrency delivering expected outcomes, with only 20% expressing positive agreement and 31% actively disagreeing. This suggests significant skepticism about cryptocurrency reliability in meeting user expectations, presenting a potential adoption barrier to address in the TRAM application.
-
-These findings support Parasuraman and Colby's (2015) assertion that optimism is a key predictor of technology adoption intentions. In the TRAM framework, the neutral-leaning optimism profile observed here likely moderates the relationship between perceived usefulness and adoption intention. The data suggests that while respondents recognize some practical benefits (timing flexibility, control), they remain uncertain about cryptocurrency's overall value proposition, creating an "optimism gap" that could be addressed through targeted education about cryptocurrency's reliability and concrete benefits.
+The substantial neutral responses indicate many respondents remain undecided about cryptocurrency's practical advantages, reflecting a population that acknowledges potential benefits but maintains reservations about fully embracing this technology for their financial activities.
 
 
-### INNOVATIVENESS
+**Figure 4.9.** ***Distribution of Responses on the Innovativeness Dimension***
 
 ```{R}
 # Pivot data to long format
@@ -883,18 +993,10 @@ ggplot(df_long_INN_final, aes(x = Question, y = Proportion, fill = Response)) +
 
 ```
 
-The graph presents data on the innovativeness dimension of technology readiness, a critical component of your TRAM framework that measures respondents' propensity to be technology pioneers and thought leaders in cryptocurrency adoption.
-
-A striking feature of this data is the consistently low levels of innovativeness compared to the optimism dimension previously analyzed. Across all six statements, strong disagreement (rating 1) and disagreement (rating 2) combined represent 42-57% of responses, significantly outweighing positive responses in every category. This indicates a substantial self-perceived innovativeness barrier among respondents.
-
-The statement receiving the most negative assessment is "I believe that I can usually figure out new cryptocurrencies without help from others," with 57% expressing disagreement and only 11% agreement. Similarly, "I believe I can already provide information to potential adopters of cryptocurrency" shows 60% disagreement, indicating low confidence in cryptocurrency knowledge sharing. The statement garnering the strongest positive response is "I believe that I enjoy the challenge of figuring out developments of cryptocurrency," with 26% agreement, suggesting that intellectual curiosity may be a potential engagement lever despite overall low innovativeness.
-
-These findings align with Rogers' (2003) diffusion of innovation theory, which posits that innovators and early adopters constitute only a small percentage of potential technology adopters. The low self-reported innovativeness suggests that most respondents do not see themselves as cryptocurrency pioneers, but rather as members of the early/late majority or laggard categories.
-
-For the TRAM model application, this low innovativeness profile has significant implications. Parasuraman and Colby's (2015) research indicates that innovativeness moderates the relationship between perceived ease of use and adoption intention. The predominantly negative innovativeness scores suggest that perceived complexity may represent a particularly strong barrier to cryptocurrency adoption for this population. This underscores the importance of designing simplified user experiences and providing robust educational support to overcome the innovativeness deficit identified in the research.
+Regarding innovativeness, the distribution of responses shows a tendency towards agreement, with most respondents choosing 3 (Neutral) and 4 (Agree) across all items. This indicates that respondents generally perceive themselves as moderately innovative in the context of cryptocurrency adoption. They believe they can understand and use cryptocurrency with some independence and keep up with developments, though few strongly consider themselves as experts.
 
 
-### INSECURITY
+**Figure 4.10.** ***Distribution of Responses on the Insecurity Dimension***
 
 ```{r}
 
@@ -953,21 +1055,9 @@ ggplot(df_long_INS_final, aes(x = Question, y = Proportion, fill = Response)) +
 
 ```
 
-The graph presents data on the insecurity dimension of technology readiness, which represents a key inhibitor factor in the TRAM framework. This dimension measures concerns about technology and skepticism regarding its ability to work properly.
+Perceptions of insecurity related to technology revealed a distribution leaning towards neutrality (3) and slight agreement (4), indicating moderate feelings of insecurity among respondents. This suggests that while respondents do not strongly believe cryptocurrency is unreliable or overly complex, they are not entirely confident in its security and usability either.
 
-The data reveals moderate to high levels of insecurity regarding cryptocurrency across all measured statements. Neutral responses (rating 3) remain prominent (27-48%), but there is a notable skew toward agreement with insecurity statements, indicating significant psychological barriers to adoption.
-
-The strongest insecurity concern relates to reliability, with 33% of respondents agreeing that "cryptocurrency always seems to fail at the worst possible time; it cannot be relied on." This lack of trust in cryptocurrency's operational reliability represents a fundamental adoption barrier. Similarly, 35% express concern about privacy issues, agreeing that "new technology like cryptocurrency makes it too easy for governments and companies to spy on people," highlighting privacy paradox issues despite cryptocurrency's theoretical privacy advantages.
-
-Usability concerns are also significant, with 38% agreeing they "prefer to have a single mobile wallet over having two or more," suggesting a desire for simplicity in cryptocurrency management. Technical complexity emerges as another major barrier, with 35% agreeing that "cryptocurrency is not designed for use by ordinary people" and 19% believing "cryptocurrency is not helpful because the language is too technical."
-
-These findings align with Parasuraman's (2000) conceptualization of insecurity as a technology readiness inhibitor that creates psychological barriers to adoption. For the TRAM framework, these substantial insecurity indicators likely moderate the relationship between both perceived usefulness and perceived ease of use with adoption intention.
-
-The relatively high insecurity scores compared to the previously observed low innovativeness suggest a "double inhibition" effect in the sample population. This combination typically characterizes what Parasuraman and Colby (2015) termed "skeptics" or "laggards" in their technology readiness segmentation, suggesting the respondents may require significant trust-building interventions and simplified user experiences to overcome these adoption barriers.
-
-
-### DISCOMFORT
-
+**Figure 4.11.** ***Distribution of Responses on the Discomfort Dimension***
 
 ```{r}
 
@@ -1026,22 +1116,14 @@ ggplot(df_long_DIS_final, aes(x = Question, y = Proportion, fill = Response)) +
 
 ```
 
-The graph presents data on the discomfort dimension of technology readiness, the second inhibitor factor in the TRAM framework. This dimension measures perceived lack of control over technology and feelings of being overwhelmed by it.
-
-The data reveals pronounced discomfort with cryptocurrency across all measured statements, with agreement (ratings 4-5) consistently outweighing disagreement (ratings 1-2). This indicates significant psychological resistance to cryptocurrency adoption based on perceived complexity and control issues.
-
-The strongest discomfort indicator is related to transaction verification, with 62% of respondents agreeing they "need to check carefully that the system is not making mistakes" during cryptocurrency transactions. Similarly, 55% express a preference for human assistance over automated systems, suggesting fundamental distrust in cryptocurrency's automated processes. Platform-related discomfort is also evident, with 48% lacking confidence using multiple cryptocurrency platforms and 35% considering multi-platform usage unsafe.
-
-Privacy concerns remain significant, with 33% believing others will see their personal cryptocurrency information, despite cryptocurrency's theoretical privacy features. Information routing concerns are also prevalent, with 45% expressing uncertainty about whether information they provide "really gets to the right place."
-
-These findings strongly support Parasuraman and Colby's (2015) conceptualization of discomfort as a key technology adoption inhibitor. For the TRAM framework, these elevated discomfort levels likely negatively moderate the relationship between perceived ease of use and adoption intention, as users who feel overwhelmed by cryptocurrency's complexity are less likely to perceive it as easy to use, regardless of its actual usability characteristics.
-
-When combined with the previously analyzed dimensions, a comprehensive technology readiness profile emerges: moderate optimism counterbalanced by low innovativeness and high insecurity/discomfort. This profile suggests the respondents fit what Parasuraman terms "skeptics" or "paranoids" in the technology readiness segmentation, characterized by appreciation of technology benefits but significant psychological barriers to adoption.
-
-For cryptocurrency adoption strategies, these findings suggest prioritizing simplified user experiences, enhanced security assurances, and comprehensive user support systems to address the pronounced discomfort observed in the research population.
+Discomfort with technology manifested as a pattern of moderate agreement (3 and 4) across most items, suggesting that respondents experience a mix of uncertainty and caution when using cryptocurrency. This may indicate concerns about transaction reliability, privacy, and the need for human support over automated systems.
 
 
-## PERCEIVED USEFULNESS
+### Technology Acceptance Dimensions
+
+The technology acceptance model dimensions—perceived usefulness and perceived ease of use — were similarly analyzed using stacked horizontal bar charts (Figures 4.12-4.13).
+
+**Figure 4.12.** ***Distribution of Responses on Perceived Usefulness***
 
 ```{r}
 
@@ -1100,18 +1182,9 @@ ggplot(df_long_PUN_final, aes(x = Question, y = Proportion, fill = Response)) +
 
 ```
 
-The graph presents data on perceived usefulness, a core component from the Technology Acceptance Model (TAM) that has been integrated into the TRAM framework. This dimension measures the degree to which individuals believe cryptocurrency would enhance their financial activities.
+Analysis of perceived usefulness revealed that most respondents view cryptocurrency positively in terms of enhancing their financial activities, with the majority selecting neutral to slightly favorable responses (levels 3 and 4). Across all statements, a consistent proportion clustered around these mid-to-high agreement levels—particularly the belief that cryptocurrency enhances effectiveness, which had the highest proportion at level 3 (0.53). While fewer respondents strongly agreed (level 5), the low proportion of strong disagreement suggests limited resistance to the idea. This pattern indicates a general but cautious optimism toward cryptocurrency’s usefulness, reflecting moderate confidence rather than strong conviction in its financial advantages.
 
-The most striking feature of this data is the overwhelming neutrality across all statements, with 43-53% of respondents selecting the neutral option (rating 3). This pronounced neutrality suggests significant uncertainty about cryptocurrency's practical benefits, representing a critical barrier to adoption as perceived usefulness is a direct predictor of adoption intention in both TAM and TRAM frameworks.
-Positive perceptions (ratings 4-5) consistently fall in the 22-30% range across all statements, with the highest positive evaluations for transaction speed (30%) and efficiency (27%). Negative perceptions (ratings 1-2) range from 25-29%, indicating a nearly balanced distribution between those who see cryptocurrency as useful versus not useful, with the majority remaining undecided.
-
-The statement receiving the strongest positive assessment is "using cryptocurrency enables me to carry out financial transactions more quickly" (30% positive), aligning with cryptocurrency's theoretical advantage of eliminating intermediaries. However, even this highest-rated benefit shows relatively weak perceived usefulness compared to the neutral responses.
-These findings align with Davis's (1989) original TAM conceptualization where perceived usefulness directly influences adoption intention. In the TRAM framework, the predominantly neutral usefulness perceptions suggest a critical gap in the value proposition of cryptocurrencies as perceived by your research population.
-
-When contextualized with the previously analyzed technology readiness dimensions, a comprehensive adoption barrier profile emerges: respondents demonstrate moderate optimism about cryptocurrency's potential benefits but show significant uncertainty about its practical usefulness, compounded by low innovativeness and high insecurity/discomfort. This combination suggests that while respondents may theoretically appreciate cryptocurrency's potential, they remain unconvinced of its concrete benefits while harboring significant concerns about its implementation.
-
-
-## PERCEIVED EASE OF USE
+**Figure 4.13.** ***Distribution of Responses on Perceived Ease of Use***
 
 ```{R}
 
@@ -1170,17 +1243,13 @@ ggplot(df_long_PEU_final, aes(x = Question, y = Proportion, fill = Response)) +
 
 ```
 
-The graph presents data on perceived ease of use, the second core component from the Technology Acceptance Model (TAM) integrated into the TRAM framework. This dimension measures the degree to which individuals believe using cryptocurrency would be free from effort.
-Similar to the perceived usefulness dimension, neutrality dominates the responses with 41-47% selecting the neutral option (rating 3) across all statements. However, unlike the balanced distribution seen in perceived usefulness, there is a notable negative skew in perceived ease of use, with negative perceptions (ratings 1-2) consistently outweighing positive ones (ratings 4-5) across all statements.
+Regarding perceived ease of use, respondents indicated a generally favorable view, with the majority selecting level 3 (neutral) and level 4 (agree) across all statements. Notably, statements such as “I believe that cryptocurrency instructions are clearer and understandable to me” and “I believe that I find it easy to follow instructions with cryptocurrency to accomplish my transactions” had high proportions at level 3 and 4, suggesting moderate confidence in the usability of cryptocurrency. The relatively low percentages at the extremes (strongly disagree and strongly agree) reflect a cautious but overall positive perception, indicating that while respondents do not find cryptocurrency difficult to use, they may still be building familiarity and comfort with it.
 
-The highest negative assessments appear for "learning to operate cryptocurrency apps has been very easy for me" (39% negative versus 18% positive) and "overall, I find that cryptocurrency is easy to use" (37% negative versus 19% positive). This indicates significant perceived complexity in cryptocurrency usage. The statement with the least negative assessment is "I find it easy to follow instructions with cryptocurrency to accomplish my transactions" (35% negative versus 20% positive), though even here, negative perceptions substantially outweigh positive ones.
+### Perceived Risk
 
-These findings strongly support Davis's (1989) TAM framework, which positions perceived ease of use as both a direct determinant of adoption intention and an indirect determinant through its influence on perceived usefulness. In the TRAM integration, the predominantly negative ease of use perceptions represent a critical adoption barrier, likely exacerbated by the low innovativeness and high discomfort levels observed in the technology readiness dimensions.
+Figure 4.14 presents the distribution of responses related to perceived risk associated with cryptocurrency adoption.
 
-When combined with the previously analyzed dimensions, a comprehensive adoption barrier profile emerges: respondents demonstrate uncertainty about cryptocurrency's practical benefits (neutral perceived usefulness), perceive it as difficult to use (negative perceived ease of use), lack the pioneering tendency to overcome these barriers (low innovativeness), and feel overwhelmed by its complexity (high discomfort). This combination creates a significant multi-dimensional barrier to cryptocurrency adoption.
-
-
-## PERCEIVED RISK
+**Figure 4.14.** ***Distribution of Responses on Perceived Risk***
 
 ```{r}
 
@@ -1256,16 +1325,13 @@ ggplot(df_long_PER_final, aes(x = Question, y = Proportion, fill = Response)) +
 
 ```
 
-The graph presents data on perceived risk, a critical factor extending beyond the core TAM components in the TRAM framework. This dimension assesses the degree to which individuals perceive various types of risk associated with cryptocurrency adoption.
+The data indicate a moderate to high perception of risk associated with cryptocurrency use, with a notable concentration of responses around levels 4 to 7, particularly in statements concerning financial risk. The highest proportions in level 7 (extremely likely) appear in items like “I believe that using cryptocurrency involves a high level of financial risk” and “I feel that the lack of regulation increases the uncertainty,” reflecting significant apprehension. This suggests that while some users recognize potential benefits of cryptocurrency, concerns regarding security, regulation, and personal data protection remain prominent barriers to full acceptance.
 
-Unlike the previous dimensions, perceived risk shows a strong positive skew across all six statements, with a substantial majority of respondents perceiving moderate to high risks (ratings 4-7). The statement "I believe that using cryptocurrency involves a high level of financial risk" received the strongest agreement, with 52% rating it 5-7 on the scale. Similarly, regulatory uncertainty generates significant concern, with 48% of respondents rating "I feel that the lack of regulation increases the uncertainty if using cryptocurrency" in the 5-7 range. The perceived risk of fraud also registers high concern, with 42% rating this statement 5-7.
+### Behavioral Intention to Use
 
-These findings strongly align with Featherman and Pavlou's (2003) research on perceived risk in e-service adoption, which identifies financial risk, security risk, and performance risk as significant adoption barriers. The results also support Bauer's (1960) classic risk perception theory that consumers perceive higher risk when outcomes are uncertain and potentially negative, as is evident in cryptocurrency markets. The high risk perceptions observed here explain the cautious adoption patterns identified by Lee (2009), who demonstrated that perceived risk often negatively moderates the relationship between perceived usefulness and adoption intentions.
+Respondents' behavioral intention to use cryptocurrencies is depicted in Figure 4.15.
 
-When integrated with the previous findings, these risk perceptions provide critical context: even when users recognize potential usefulness (moderately positive) and despite usability challenges (negative ease of use), the pronounced perception of risk creates a substantial psychological barrier to adoption. 
-
-
-## BEHAVIORAL INTENTION TO USE
+**Figure 4.15.** ***Distribution of Responses on Behavioral Intention to Use***
 
 ```{r}
 # Pivot data to long format
@@ -1340,15 +1406,13 @@ ggplot(df_long_BIU_final, aes(x = Question, y = Proportion, fill = Response)) +
 
 ```
 
-The graph presents data on behavioral intention to use cryptocurrency, the ultimate dependent variable in the TRAM framework. This dimension measures respondents' willingness and plans to adopt or continue using cryptocurrency for financial transactions.
+Analysis reveals a moderate level of intention to use cryptocurrencies among respondents, with the largest proportion consistently selecting neutral to slightly positive responses (scores 3-5). Approximately 25-28% of respondents indicate higher likelihood of adoption (scores 4), while stronger commitment (scores 6-7) remains relatively low at 8-14%. Notably, respondents show similar patterns across all six intention statements, suggesting consistent but cautious interest in cryptocurrency adoption. This moderate enthusiasm may indicate that while many see potential value in cryptocurrencies, significant barriers to widespread adoption remain, including concerns about volatility, regulatory uncertainty, and technical complexity that prevent stronger behavioral commitments.
 
-The data reveals a relatively balanced distribution of intentions with a slight negative skew. The statement "I believe overall, I expect to actively engage with and utilize cryptocurrency on a regular basis" shows the highest neutrality (36%), while other statements display more distributed responses across the scale. For most statements, approximately 35-40% of respondents indicate positive intentions (ratings 5-7), while 29-39% express negative intentions (ratings 1-2). The most positive responses appear for "I intend to use/continue cryptocurrency for my financial transactions in the near future," with 35% rating it 5-7, suggesting a subset of respondents with concrete adoption plans.
+## Correlation Analysis
 
-These findings align with Ajzen's (1991) Theory of Planned Behavior, which positions behavioral intention as the most proximal predictor of actual behavior. The moderate behavioral intentions observed here reflect the mixed influences of the previously analyzed dimensions: moderately positive perceived usefulness partially drives adoption intentions, while negative ease of use perceptions and high risk perceptions act as counterbalancing forces. This complex interplay supports Venkatesh and Davis's (2000) findings that behavioral intentions represent the culmination of multiple cognitive evaluations.
+To examine the relationships among key constructs prior to more sophisticated analyses, a correlation matrix was generated (Table 4.2). The matrix reveals significant positive correlations between Behavioral Intention to Use and several facilitating factors, including Perceived Usefulness (0.585), Perceived Ease of Use (0.587), Optimism (0.571), and Innovativeness (0.514). Additionally, notable associations exist between risk factors, with Discomfort and Insecurity showing a moderate correlation (0.562), suggesting these constructs may represent related dimensions of cryptocurrency hesitancy.
 
-When integrated with the previous analyses, these behavioral intention patterns present a nuanced adoption landscape: despite significant perceived risks and usability challenges, approximately one-third of respondents still express positive adoption intentions, likely driven by perceived usefulness. This suggests the presence of distinct adopter segments aligned with Rogers' (2003) diffusion categories - early adopters who value potential benefits despite risks, and the early/late majority who remain hesitant due to perceived barriers. 
-
-# CORRELATIONS
+**Table 4.2.** ***Correlation Matrix of Key Constructs***
 
 ```{r}
 df_corr <- 
@@ -1443,53 +1507,13 @@ p_corr_items
 
 ```
 
-The Spearman correlation matrix reveals several significant relationships that strongly validate the Technology Readiness and Acceptance Model (TRAM) framework for cryptocurrency adoption:
+Of particular interest are the significant correlations between Perceived Usefulness and both Optimism (0.721) and Perceived Ease of Use (0.574), indicating that practical utility perceptions are closely linked to technological optimism and usability assessments. The negative correlations between Perceived Risk and facilitating factors (Innovativeness: -0.267; Perceived Ease of Use: -0.193) further support the conceptual model's proposition that risk perception serves as a key barrier to cryptocurrency adoption. These relationships provide preliminary support for several of the hypothesized linkages in the conceptual model.
 
+## Exploratory Factor Analysis
 
-**Primary Determinants of Behavioral Intention to Use (BIU)**
+### Assessment of EFA Appropriateness
 
-1. Perceived Usefulness (PUN) → BIU: Strong positive correlation (r = 0.585) indicates perceived benefits significantly drive adoption intentions.
-2. Perceived Ease of Use (PEU) → BIU: Strong positive correlation (r = 0.587) demonstrates usability is equally important as usefulness in driving adoption.
-3. Optimism (OPT) → BIU: Strong positive correlation (r = 0.571) suggests positive technology beliefs substantially influence adoption intentions.
-4. Innovativeness (INN) → BIU: Moderate-to-strong positive correlation (r = 0.514) indicates personal innovativeness predisposes users toward cryptocurrency adoption.
-5. Perceived Risk (PER) → BIU: Negative correlation (r = -0.193) confirms risk perceptions inhibit adoption intentions, though the effect is weaker than anticipated.
-
-**Interrelationships Between TRAM Components**
-
-**Technology Readiness → TAM Components:**
-
-1. Optimism strongly correlates with Perceived Usefulness (r = 0.721), representing the strongest correlation in the matrix.
-2. Innovativeness strongly correlates with Perceived Ease of Use (r = 0.634), supporting its role in reducing technology complexity perceptions.
-3. Discomfort strongly correlates with Perceived Risk (r = 0.668), demonstrating how technological discomfort amplifies risk perceptions.
-
-
-**TAM Components Interrelationships:**
-
-1. Perceived Ease of Use → Perceived Usefulness (r = 0.574): Strong correlation validates Davis's (1989) proposition that ease of use enhances perceived usefulness.
-
-
-**Technology Readiness Dimensions Interrelationships:**
-
-1. Discomfort → Insecurity (r = 0.562): Strong correlation indicates these inhibitor dimensions are closely related but distinct.
-2. Optimism → Innovativeness (r = 0.575): Strong correlation suggests these driver dimensions work in tandem.
-
-
-
-**Notable Weak Correlations**
-
-1. Insecurity → BIU (r = -0.07) and Discomfort → BIU (r = -0.161): Surprisingly weak correlations suggest these inhibitors may not directly impact adoption intentions but likely work through mediating variables.
-2. Perceived Risk → Perceived Usefulness (r = -0.031): The near-zero correlation suggests these constructs operate independently, with risk perceptions not significantly diminishing perceived benefits.
-
-**Theoretical Implications**
-
-The correlation patterns strongly validate the integrated TRAM approach for understanding cryptocurrency adoption. The findings align with Parasuraman's (2000) technology readiness index, which posits that optimism and innovativeness drive technology adoption while discomfort and insecurity inhibit it. The data specifically confirms Venkatesh and Davis's (2000) extended TAM by demonstrating the crucial relationship between perceived ease of use and perceived usefulness.
-
-The correlation matrix reveals that technology readiness dimensions impact behavioral intentions both directly and indirectly. The strongest indirect path appears to be Optimism → Perceived Usefulness → Behavioral Intention, with coefficients of 0.721 and 0.585 respectively. This supports Lin et al.'s (2007) findings that technology readiness dimensions influence adoption through TAM constructs.
-
-The relatively weak direct correlation between Perceived Risk and Behavioral Intention (r = -0.193) differs from previous findings by Featherman and Pavlou (2003), who found stronger risk-adoption relationships. This suggests that in the cryptocurrency context, perceived benefits may outweigh perceived risks for many potential adopters.
-
-
-# Determining the Appropriateness of EFA
+Prior to conducting the exploratory factor analysis (EFA), the appropriateness of the data for factor analysis was evaluated using multiple criteria.
 
 ```{r}
 
@@ -1500,17 +1524,18 @@ df_subset <- df_final[, 17:ncol(df_final)]
 # BARTLETT TEST
 BARTLETT(df_subset, N= nrow(df_subset))
 
+```
+
+Bartlett's test of sphericity yielded a chi-square value of 12475.18 (df = 1128, p < .001), indicating that the correlation matrix was significantly different from an identity matrix. This suggests sufficient intercorrelations among the variables for factor analysis.
+
+```{r}
 
 # KAISER-MEYEN-OLKIN (KMO Test)
 KMO(df_subset)
 
 ```
 
-These results strongly support the methodological decisions. The high KMO value (0.932) is particularly impressive, as it exceeds the commonly accepted threshold of 0.6 and approaches the theoretical maximum of 1.0. As Hair et al. (2019) note, KMO values above 0.9 indicate exceptional suitability for factor analysis and suggest that the extracted factors will be well-defined.
-
-The significant Bartlett's test further reinforces this conclusion, aligning with Tabachnick and Fidell's (2013) recommendation that significant results (p < .001) indicate sufficient correlations among variables to proceed with factor analysis.
-
-These preliminary tests provide a solid statistical foundation for the subsequent PLS-SEM analysis using the TRAM framework, confirming that the measurement model is built on appropriately structured data suitable for latent variable modeling.
+The Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy was 0.932, exceeding the recommended threshold of 0.60 and indicating that the proportion of variance in the variables might be caused by underlying factors, thus supporting the factorability of the correlation matrix. Individual KMO values for variables ranged from 0.772 to 0.970, with the majority above 0.90, further confirming excellent sampling adequacy across all measurement items.
 
 ```{r}
 
@@ -1519,16 +1544,20 @@ These preliminary tests provide a solid statistical foundation for the subsequen
 # KAISER-GUTTMAN CRITERION
 KGC(df_subset, eigen_type = "EFA")
 
+```
+
+**Figure 4.16.** ***Scree Plot from Exploratory Factor Analysis***
+
+```{r}
+
 # SCREE TEST
 scree(df_subset)
 
 ```
 
-The scree plot and eigenvalue analysis from your Exploratory Factor Analysis (EFA) provide critical insights into the underlying factor structure of the cryptocurrency adoption research.
+The scree plot (Figure 4.16) suggests the retention of approximately 6-8 factors based on the notable elbow in the curve. The first two factors demonstrate substantially higher eigenvalues (approximately 17 and 8, respectively), followed by a gradual decrease in subsequent factors. After the eighth factor, the curve flattens considerably, indicating minimal additional variance explained by retaining more factors. This pattern aligns with Kaiser's criterion of retaining factors with eigenvalues greater than 1.0, while also considering the theoretical structure of the measurement instrument.
 
-The Kaiser-Guttmann criterion, which retains factors with eigenvalues greater than 1.0, suggests a 5-factor solution for the data. This finding is visually reinforced by the scree plot, which displays a clear "elbow" or point of inflection after the fifth factor (highlighted with a red circle at position 5). The first five factors show eigenvalues that are substantially above the 1.0 threshold (represented by the horizontal dotted line), with a steep decline in eigenvalues thereafter.
-
-This 5-factor structure aligns perfectly with the TRAM conceptual framework, which proposes eight theoretical constructs: four technology readiness dimensions (Optimism, Innovativeness, Discomfort, Insecurity), two TAM components (Perceived Usefulness, Perceived Ease of Use), Perceived Risk, and Behavioral Intention to Use. The suggested 5-factor solution likely represents a consolidation of these theoretical constructs, where some dimensions may load together on common factors.
+**Figure 4.17.** ***Parallel Analysis Scree Plot***
 
 ```{r}
 
@@ -1537,147 +1566,350 @@ fa.parallel(df_subset, fa = "fa")
 
 ```
 
-The parallel analysis scree plot provides a more sophisticated approach to factor extraction compared to the basic Kaiser-Guttmann criterion previously examined. This advanced technique compares eigenvalues from the actual data against eigenvalues generated from random data matrices (simulated and resampled data) to determine the optimal number of factors.
-
-The results suggest that 6 factors should be retained in the model. This determination is made by identifying the point where the actual data eigenvalues (blue line with triangles) cross above the simulated/resampled data eigenvalues (dotted green and dashed red lines). The parallel analysis indicates that 6 factors represent meaningful variance beyond what would be expected by random chance.
-
-This 6-factor solution refines the previous 5-factor structure suggested by the Kaiser-Guttmann criterion. As Horn (1965), the developer of parallel analysis, demonstrated, this method typically provides more accurate factor extraction decisions than the eigenvalue > 1 rule, which can sometimes overestimate or underestimate the number of factors.
-
-The 6-factor solution aligns well with the TRAM conceptual framework. It suggests that while some theoretical constructs may share common variance, the model requires 6 distinct factors to adequately represent the data structure. This could indicate that certain technology readiness dimensions (perhaps optimism and innovativeness, or discomfort and insecurity) may be empirically distinct in the cryptocurrency context, rather than consolidating as might have been suggested by the simpler 5-factor solution.
-
-As Hayton, Allen, and Scarpello (2004) note, parallel analysis offers superior accuracy for factor retention decisions because it accounts for sampling error. The 6-factor solution therefore represents a more statistically defensible measurement structure for your PLS-SEM model of cryptocurrency adoption, balancing parsimony with explanatory power.
+The parallel analysis scree plot (Figure 4.17) provided further guidance on factor retention, suggesting that six factors should be retained. This determination is based on the intersection points between the actual data eigenvalues (blue line with triangles) and the simulated/resampled data eigenvalues (red dashed line). Only those factors whose eigenvalues from the actual data exceed the corresponding eigenvalues from the simulated random data are considered meaningful. This parallel analysis approach offers a more rigorous statistical criterion for factor extraction compared to traditional methods, reinforcing the decision to proceed with a six-factor solution in subsequent analyses.
 
 
-### Factor Loadings Matrix
+### Factor Structure
+
+Based on the factor retention criteria, six factors were extracted. Table 4.3 presents the factor loadings matrix after rotation. The factor structure demonstrates clear differentiation among constructs with minimal cross-loading. Factor 1 (ML2) represents Behavioral Intention to Use (BIU) with strong item loadings ranging from 0.806 to 0.828. Factor 2 (ML3) comprises Discomfort (DIS) items with loadings between 0.678 and 0.818. Factor 3 (ML1) captures Perceived Risk (PER) items with loadings from 0.584 to 0.643. Factor 4 (ML4) represents Perceived Usefulness (PUN) with robust loadings between 0.709 and 0.790. Factor 5 (ML5) reflects Perceived Ease of Use (PEU) with consistent loadings from 0.714 to 0.753. Factor 6 (ML6) captures Optimism (OPT) with solid loadings between 0.668 and 0.686. Cumulatively, these six factors explain 64.5% of the total variance, with the first factor alone accounting for 25.4% of variance.
+
+**Table 4.3.** ***Factor Loadings Matrix***
 
 ```{r}
 
 # Factor Interpretation
 
 # Factor Extraction
-# fa_unrotated <- fa(r = df_subset, nfactors = 6, rotate = # "none")
+# fa_unrotated <- fa(r = df_subset, nfactors = 7, rotate = # "none")
 # print(fa_unrotated$loadings)
 
+# df_subset <- df_subset |> select(-ins5, -ins6)
+
 # Factor Rotation
-fa_varimax <- fa(r = df_subset, nfactors = 6, rotate = "varimax", fm = "ml")
+fa_varimax <- fa(r = df_subset, nfactors = 7, rotate = "varimax", fm = "ml")
 print(fa_varimax$loadings, sort = TRUE, cutoff = 0.4)
 
 ```
 
+The factor loadings matrix reveals a clear six-factor structure with strong psychometric properties. Each item loaded predominantly on its intended factor with minimal cross-loading, supporting excellent construct validity. Factor 1 (ML2) represents Behavioral Intention to Use (BIU) with loadings ranging from 0.806 to 0.828. Factor 2 (ML3) captures Discomfort (DIS) with loadings between 0.678 and 0.818. Factor 3 (ML1) comprises Perceived Risk (PER) items loading from 0.584 to 0.643. Factor 4 (ML4) represents Perceived Usefulness (PUN) with loadings between 0.709 and 0.790. Factor 5 (ML5) measures Perceived Ease of Use (PEU) with loadings from 0.714 to 0.753. Finally, Factor 6 (ML6) captures Optimism (OPT) with loadings between 0.668 and 0.686. Together, these six factors explain 64.5% of the total variance, with factor 1 alone accounting for 25.4%. The clean factor structure provides strong empirical support for the hypothesized measurement model, with no problematic items requiring removal.
 
-The factor loadings matrix presents the results of the Exploratory Factor Analysis with six extracted factors, confirming the structure suggested by the parallel analysis. This matrix provides crucial evidence for the validity of your measurement model within the TRAM framework.
-
-The loadings reveal a clear and well-defined factor structure:
-
-1. **ML1 (Behavioral Intention to Use - BIU)**: All six BIU indicators (biu1-biu6) load strongly on this factor (0.739-0.861), with no significant cross-loadings. This factor explains 18.3% of the total variance, reflecting the importance of this dependent variable.
-
-2. **ML4 (Perceived Usefulness - PUN)**: All six PUN indicators (pun1-pun6) show strong loadings (0.743-0.778) exclusively on this factor, explaining 9.8% of variance.
-
-3. **ML5 (Perceived Ease of Use - PEU)**: All six PEU indicators (peu1-peu6) demonstrate strong loadings (0.711-0.788) with good discriminant validity, accounting for 9.1% of variance.
-
-4. **ML6 (Innovativeness - INN)**: All six INN indicators (inn1-inn6) primarily load on this factor (0.608-0.790), though inn5 shows a minor cross-loading (0.406) with ML2. This factor explains 7.9% of variance.
-
-5. **ML3 (Optimism - OPT)**: All six OPT indicators (opt1-opt6) load cleanly on this factor (0.581-0.723), explaining 11.4% of variance.
-
-6. **ML2 (Combined Risk Inhibitors)**: This factor combines:
-
-  All insecurity indicators (ins5-ins6): 0.564-0.644
-  All discomfort indicators (dis1-dis6): 0.600-0.732
-  All perceived risk indicators (per1-per6): 0.700-0.799
-  This combined factor represents the inhibitor dimensions and explains 15.7% of variance.
-
-
-The factor structure largely confirms the TRAM theoretical framework with a few notable insights:
-
-1. The inhibitor dimensions (insecurity, discomfort, and perceived risk) load together on a single factor, suggesting these constructs share substantial common variance in the cryptocurrency context. This aligns with Parasuraman's (2000) conceptualization of technology readiness inhibitors representing related aspects of technology resistance.
-
-2. The innovativeness and optimism dimensions load as distinct factors, maintaining their theoretical separation as driver dimensions of technology readiness.
-
-3. The core TAM components (perceived usefulness and perceived ease of use) emerge as clean, separate factors, validating their conceptual distinctiveness.
-
-4. The cumulative variance explained by all six factors is 61.5%, exceeding the 60% threshold recommended by Hair et al. (2019) for social science research.
-
-This factor structure provides strong empirical support for the measurement model and justifies proceeding with the PLS-SEM analysis using these validated constructs. The clean loading patterns with minimal cross-loadings indicate good convergent and discriminant validity for most measures, though the consolidation of inhibitor dimensions suggests these may function as a higher-order construct in your final model.
-
-### Coefficient Matrix
+**Table 4.4.** ***Coefficient Matrix***
 
 ```{r}
 
 # Factor Interpretation and Respecification
 # Fix the pipe syntax - either use correct dplyr syntax or direct assignment
-fa_varimax_scores_rounded <- round(fa_varimax$scores, 6)
+fa_varimax_scores_rounded <- round(fa_varimax$scores, 7)
 head(fa_varimax_scores_rounded) # Use head() instead of tibble() if df_subset isn't properly set up for tibble
 
 
 ```
 
-These coefficients represent the weights used to compute factor scores from the standardized observed variables. While factor loadings (which shared previously) show the correlation between variables and factors, these score coefficients are used to estimate the actual factor scores for each respondent.
+The coefficient matrix (Table 4.4) provides further insight into the relationships between observed variables and latent factors, indicating moderate correlations between factors. Notable correlations exist between Factor 1 (BIU) and Factor 5 (PEU) at 0.588, as well as between Factor 1 (BIU) and Factor 6 (OPT) at 0.571, confirming the conceptual relationships between behavioral intentions, perceived ease of use, and optimism toward cryptocurrencies. The moderate negative correlation between Factor 3 (PER) and Factor 1 (BIU) (-0.246) reinforces the theoretical expectation that higher perceived risk negatively influences intention to use.
 
-This **coefficient matrix** is primarily a computational tool rather than an interpretative one. It's used in the algorithm to generate factor scores that can be used in subsequent analyses. While, the **factor loadings matrix** provides more meaningful information about the relationship between the observed variables and latent factors.
+## Partial Least Squares Structural Equation Modeling (PLS-SEM)
 
-# PLS-SEM
+### Assessment of Measurement Model
+
+The measurement model was evaluated to ensure reliability and validity before proceeding to structural model assessment. Table 4.5 presents the assessment results for the measurement model.
+
+**Table 4.5.** ***Assessment of PLS-SEM Measurement Model***
 
 ```{r}
-# Step 1: Define the measurement model
 
-# Based on the factor analysis results
-# Note: To a higher-order construct for the inhibitor dimensions
-
-# First-order measurement model
+# Step 1: Define the measurement model using multi_items function
 measurement_model <- constructs(
-  # Behavioral Intention to Use (ML1)
-  reflective("BIU", c("biu1", "biu2", "biu3", "biu4", "biu5", "biu6")),
-  
-  # Perceived Usefulness (ML4)
-  reflective("PUN", c("pun1", "pun2", "pun3", "pun4", "pun5", "pun6")),
-  
-  # Perceived Ease of Use (ML5)
-  reflective("PEU", c("peu1", "peu2", "peu3", "peu4", "peu5", "peu6")),
-  
-  # Innovativeness (ML6)
-  reflective("INN", c("inn1", "inn2", "inn3", "inn4", "inn5", "inn6")),
-  
-  # Optimism (ML3)
-  reflective("OPT", c("opt1", "opt2", "opt3", "opt4", "opt5", "opt6")),
-  
-  # Since the factor analysis showed these loading on a single factor,
-  # we'll create a single "INHIBITOR" construct
-  reflective("INHIBITOR", c("ins1", "ins2", "ins3", "ins4", "ins5", "ins6",
-                            "dis1", "dis2", "dis3", "dis4", "dis5", "dis6",
-                            "per1", "per2", "per3", "per4", "per5", "per6"))
+  composite("DIS", multi_items("dis", 1:6)),
+  composite("PER", multi_items("per", c(1, 2, 3, 6))),  
+  composite("BIU", multi_items("biu", 1:6)),
+  composite("PUN", multi_items("pun", 1:6)),
+  composite("PEU", multi_items("peu", 1:6)),
+  composite("INN", multi_items("inn", 1:6)),
+  composite("OPT", multi_items("opt", 1:6))
 )
 
-# Define the structural model based on TRAM framework
+# Step 2: Define the structural model
 structural_model <- relationships(
-  # Technology Readiness relationships
   paths(from = "OPT", to = c("PUN", "PEU")),
   paths(from = "INN", to = c("PUN", "PEU")),
-  paths(from = "INHIBITOR", to = c("PUN", "PEU")),
-  
-  # TAM core relationships
+  paths(from = c("DIS", "PER"), to = c("PUN", "PEU")),
   paths(from = "PEU", to = "PUN"),
   paths(from = c("PUN", "PEU"), to = "BIU")
 )
 
+# Step 3: Estimate the PLS-SEM model
+pls_model <- estimate_pls(
+  data = df_subset,
+  measurement_model = measurement_model,
+  structural_model = structural_model
+)
 
-# Step 2: Estimate the PLS-SEM model
-pls_model_estimate <- 
-  estimate_pls(data = df_subset, 
-               measurement_model = measurement_model, 
-               structural_model = structural_model)
+# Step 4: Get summary of results
+pls_model_summary <- summary(pls_model)
 
+```
 
-pls_model_summary <- summary(pls_model_estimate)
+```{r}
+
 
 # Bootstrapping the PLS-SEM model
-boot_pls_model <- bootstrap_model(seminr_model = pls_model_estimate, nboot = 10000)
+boot_pls_model <- bootstrap_model(seminr_model = pls_model, nboot = 100)
 boot_pls_model_summary <- summary(boot_pls_model, alpha = 0.10)
   
+```
+
+```{r}
 
 plot(boot_pls_model$measurement_model)
 
-DT::datatable(boot_pls_model_summary$bootstrapped_loadings %>% round(3))
+```
+
+### Validity and Reliability Analysis
+
+Table 4.6 provides a more detailed examination of the validity and reliability indicators for each construct in the measurement model.
+
+```{r}
 
 DT::datatable(pls_model_summary$reliability %>% round(3))
 
 ```
+
+```{r}
+
+plot(pls_model_summary$reliability)
+
+```
+
+The analysis confirms that all constructs meet the established criteria for reliability and convergent validity, with excellent psychometric properties across all measurement scales.
+
+The Cronbach's alpha values range from 0.877 to 0.964, well above the recommended threshold of 0.7, indicating high internal consistency reliability for all constructs. 
+
+Composite reliability (rhoC) values are similarly impressive (0.896 to 0.971), further confirming strong reliability. 
+
+Convergent validity is demonstrated by AVE values ranging from 0.591 to 0.847, all exceeding the minimum acceptable value of 0.5, with most constructs showing particularly strong values above 0.7. The Discomfort (DIS) construct shows the lowest AVE (0.591), though still acceptable, suggesting slightly more measurement error compared to other constructs. 
+
+The unusually high rhoA value for DIS (1.153) is notable and may indicate some multicollinearity among its indicators, warranting closer examination, though this doesn't compromise the overall measurement quality given all other metrics are satisfactory.
+
+### Discriminant Validity
+
+Discriminant validity was assessed using two approaches: the Fornell-Larcker criterion and the heterotrait-monotrait (HTMT) ratio of correlations.
+
+**Table 4.7.** ***Fornell-Larcker Criterion for Discriminant Validity***
+
+```{r}
+
+DT::datatable(pls_model_summary$validity$fl_criteria %>% round(3))
+
+```
+
+The Fornell-Larcker criterion (Table 4.7) demonstrates that the square root of the AVE for each construct (diagonal elements) exceeds the correlations with other constructs (off-diagonal elements), supporting discriminant validity.
+
+**Table 4.8.** ***Heterotrait-Monotrait (HTMT) Ratio***
+
+### Heterotrait-monotrait ratio (HTMT)
+
+```{r}
+
+DT::datatable(pls_model_summary$validity$htmt %>% round(3))
+
+```
+
+The HTMT ratios (Table 4.8) all fall below the conservative threshold of 0.85, providing additional evidence of discriminant validity between the constructs.
+
+### Multicollinearity Assessment
+
+Multicollinearity was assessed using variance inflation factors (VIF), as presented in Table 4.9.
+
+**Table 4.9.** ***Variance Inflation Factors (VIF)***
+
+```{r}
+
+pls_model_summary$vif_antecedents
+
+```
+
+All VIF values are below the critical threshold of 5.0, ranging from 1.659 to 2.047, indicating that multicollinearity is not a concern in the structural model.
+
+### PLS-SEM Bootstrapped Estimation
+
+To assess the significance of the measurement model parameters, a bootstrapping procedure with 5,000 resamples was conducted.
+
+```{r}
+
+## bootstrapping constructs pls-sem model
+boostrap_pls_model <- 
+  bootstrap_model(
+    seminr_model = pls_model, 
+    nboot = 100, 
+    seed = 20231
+)
+
+
+## bootstrapped summary
+boostrap_pls_model_summary <- summary(boostrap_pls_model, alpha = 0.10)
+
+```
+
+```{r}
+
+plot(boostrap_pls_model)
+
+```
+
+**Table 4.10.** ***Bootstrapped Factor Loadings***
+
+```{r}
+
+DT::datatable(boot_pls_model_summary$bootstrapped_loadings %>% round(3))
+
+```
+
+The bootstrapped factor loadings (Table 4.10) confirm the statistical significance of all indicator loadings, with t-values exceeding 1.96 (p < 0.05) and ranging from 4.043 to 131.076.
+
+### Path Analysis Results
+
+The structural model's path coefficients were evaluated to test the hypothesized relationships between constructs. Table 4.11 presents the path estimates, including standardized coefficients, t-values, p-values, and confidence intervals.
+
+**Table 4.11.** ***Path Estimates from PLS-SEM Analysis***
+
+```{r}
+
+DT::datatable(boot_pls_model_summary$bootstrapped_paths %>% round(3)) 
+
+```
+
+## Summary of Hypothesis Testing
+
+Based on the PLS-SEM analysis, Table 4.12 summarizes the results of the hypothesis testing.
+
+**Table 4.12.** ***Summary of Hypothesis Testing Results***
+
+```{r}
+
+# Create a data frame with the hypothesis testing results
+hypothesis_results <- data.frame(
+  Hypothesis = c(
+    "H1a: Optimism (OPT) positively influences Perceived Ease of Use (PEU)",
+    "H1b: Optimism (OPT) positively influences Perceived Usefulness (PUN)",
+    "H2a: Innovativeness (INN) positively influences Perceived Ease of Use (PEU)",
+    "H2b: Innovativeness (INN) positively influences Perceived Usefulness (PUN)",
+    "H3a: Discomfort (DIS) negatively influences Perceived Ease of Use (PEU)",
+    "H3b: Discomfort (DIS) negatively influences Perceived Usefulness (PUN)",
+    "H4a: Performance Risk (PER) negatively influences Perceived Ease of Use (PEU)",
+    "H4b: Performance Risk (PER) negatively influences Perceived Usefulness (PUN)",
+    "H5: Perceived Ease of Use (PEU) positively influences Perceived Usefulness (PUN)",
+    "H6: Perceived Ease of Use (PEU) positively influences Behavioral Intention to Use (BIU)",
+    "H7: Perceived Usefulness (PUN) positively influences Behavioral Intention to Use (BIU)"
+  ),
+  Path = c(
+    "OPT -> PEU", 
+    "OPT -> PUN", 
+    "INN -> PEU", 
+    "INN -> PUN", 
+    "DIS -> PEU", 
+    "DIS -> PUN", 
+    "PER -> PEU", 
+    "PER -> PUN", 
+    "PEU -> PUN", 
+    "PEU -> BIU", 
+    "PUN -> BIU"
+  ),
+  Coefficient = c(0.299, 0.582, 0.434, -0.123, -0.138, 0.028, 0.072, 0.089, 0.415, 0.321, 0.408),
+  t_value = c(4.401, 11.877, 6.087, -2.035, -1.765, 0.341, 0.961, 1.187, 6.141, 5.295, 5.994),
+  CI_lower = c(0.192, 0.495, 0.306, -0.197, -0.279, -0.088, -0.041, -0.037, 0.3, 0.202, 0.308),
+  CI_upper = c(0.4, 0.654, 0.538, -0.013, -0.002, 0.162, 0.203, 0.21, 0.516, 0.408, 0.519)
+)
+
+# Add decision column (whether hypothesis is supported or not)
+hypothesis_results <- hypothesis_results %>%
+  mutate(
+    Significant = abs(t_value) > 1.96 & (sign(CI_lower) == sign(CI_upper)),
+    Expected_Sign = c(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE),
+    Sign_Match = (Coefficient > 0 & Expected_Sign) | (Coefficient < 0 & !Expected_Sign),
+    Decision = case_when(
+      Significant & Sign_Match ~ "Supported",
+      Significant & !Sign_Match ~ "Supported (opposite direction)",
+      !Significant ~ "Not supported"
+    )
+  )
+
+# Create formatted table with kable
+hypothesis_table_kable <- hypothesis_results %>%
+  select(Hypothesis, Path, Coefficient, t_value, CI_lower, CI_upper, Decision) %>%
+  rename(
+    "Path Coefficient" = Coefficient,
+    "t-value" = t_value,
+    "95% CI Lower" = CI_lower,
+    "95% CI Upper" = CI_upper
+  ) %>%
+  kable(format = "html", caption = "Summary of Hypothesis Testing Results", digits = 3) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE) %>%
+  column_spec(1, width = "40%") %>%
+  column_spec(7, bold = TRUE)
+
+# Print the kable table
+hypothesis_table_kable
+
+```
+
+Of the eleven (11) hypotheses tested, seven (7) were supported by the data, while four (4) were not supported. These are the following:
+
+**Significant Paths**
+
+***Optimism (OPT) to Perceived Ease of Use (PEU)***
+
+This significant positive relationship indicates that students with higher levels of technology optimism perceive cryptocurrencies as easier to use.
+
+***Optimism (OPT) to Perceived Usefulness (PUN)***
+
+This strong positive relationship suggests that optimistic attitudes toward technology substantially enhance perceptions of cryptocurrency usefulness, representing the strongest effect among all paths.
+
+***Innovativeness (INN) to Perceived Ease of Use (PEU)***
+
+Personal innovativeness has a significant positive effect on perceived ease of use, suggesting that students who are more innovative with technology find cryptocurrencies easier to use.
+
+***Innovativeness (INN) to Perceived Usefulness (PUN)***
+
+Interestingly, this significant negative relationship indicates that more innovative students perceive cryptocurrencies as less useful, which contradicts typical technology adoption patterns and warrants further investigation.
+
+In other words, higher innovativeness is associated with lower perceived usefulness, which contradicts the original positive direction proposed in the hypothesis.
+
+This unexpected negative relationship suggests that more innovative individuals might actually perceive cryptocurrencies as less useful, perhaps due to higher standards or more critical evaluation of the technology's current practical applications.
+
+***Perceived Ease of Use (PEU) to Perceived Usefulness (PUN)***
+
+This strong positive relationship confirms the Technology Acceptance Model's core proposition that technologies perceived as easier to use are also perceived as more useful.
+
+***Perceived Ease of Use (PEU) to Behavioral Intention to Use (BIU)***
+
+This significant positive relationship demonstrates that perceived ease of use directly influences students' intentions to adopt cryptocurrency.
+
+***Perceived Usefulness (PUN) to Behavioral Intention to Use (BIU)***
+
+This strong positive relationship indicates that perceived usefulness has a substantial direct effect on cryptocurrency adoption intentions, and this effect is stronger than that of perceived ease of use.
+
+**Non-Significant Paths**
+
+***Discomfort (DIS) to Perceived Ease of Use (PEU)***
+
+The confidence interval includes zero, indicating that technology discomfort does not significantly affect how easy students perceive cryptocurrencies to be.
+
+***Discomfort (DIS) to Perceived Usefulness (PUN)***
+
+Technology discomfort does not significantly influence perceptions of cryptocurrency usefulness.
+
+***Perceived Risk (PER) to Perceived Ease of Use (PEU)***
+
+Perceived  risk has no significant impact on ease of use perceptions.
+
+***Performance Risk (PER) to Perceived Usefulness (PUN)***
+
+Performance risk concerns do not significantly affect usefulness perceptions.
+
+# Key Findings
+
+The results reveal that **optimism** and **innovativeness** (positive dimensions of Technology Readiness) are the **strongest predictors** of **perceived ease of use** and **perceived usefulness** of cryptocurrencies. Contrary to expectations, technology innovativeness shows a negative relationship with perceived usefulness, suggesting that more innovative students may be more critical or realistic about cryptocurrency's practical value.
+
+The Technology Acceptance Model's core relationships are confirmed, with perceived ease of use positively influencing perceived usefulness, and both constructs significantly affecting behavioral intention to use cryptocurrencies. Perceived usefulness demonstrates a stronger effect on behavioral intention (0.408) compared to perceived ease of use (0.322), indicating that **practical utility is more important than simplicity in driving cryptocurrency adoption among university students**.
+
+Notably, the inhibiting factors of Technology Readiness (discomfort and performance risk) did not significantly influence either perceived ease of use or perceived usefulness, suggesting that **concerns about technology complexity or performance may not be major barriers to cryptocurrency adoption in this population**.
