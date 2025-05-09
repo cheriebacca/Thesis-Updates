@@ -1908,7 +1908,7 @@ Performance risk concerns do not significantly affect usefulness perceptions.
 
 # Key Findings
 
-The results reveal that **optimism** and **innovativeness** (positive dimensions of Technology Readiness) are the **strongest predictors** of **perceived ease of use** and **perceived usefulness** of cryptocurrencies. Contrary to expectations, technology innovativeness shows a negative relationship with perceived usefulness, suggesting that more innovative students may be more critical or realistic about cryptocurrency's practical value.
+The results reveal that **optimism** and **innovativeness** (positive dimensions of Technology Readiness) are the **strongest predictors** of **perceived ease of use** and **perceived usefulness** of cryptocurrencies. Contrary to expectations, technology innovativeness shows a negative relationship with perceived usefulness, suggesting that **more innovative students may be more critical or realistic about cryptocurrency's practical value**.
 
 The Technology Acceptance Model's core relationships are confirmed, with perceived ease of use positively influencing perceived usefulness, and both constructs significantly affecting behavioral intention to use cryptocurrencies. Perceived usefulness demonstrates a stronger effect on behavioral intention (0.408) compared to perceived ease of use (0.322), indicating that **practical utility is more important than simplicity in driving cryptocurrency adoption among university students**.
 
